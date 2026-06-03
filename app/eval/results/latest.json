@@ -1,0 +1,490 @@
+{
+  "counts": {
+    "total": 53,
+    "grounded": 41,
+    "refusal": 12
+  },
+  "parapilot": {
+    "hallucination_rate_pct": 0.0,
+    "answer_correctness_pct": 100.0,
+    "citation_accuracy_pct": 100.0,
+    "citations_real_pct": 100.0,
+    "groundedness_pct": 95.7,
+    "refusal_correctness_pct": 100.0,
+    "refusal_kind_correctness_pct": 100.0
+  },
+  "baseline": {
+    "hallucination_rate_pct": 100.0,
+    "answer_correctness_pct": 0.0,
+    "citation_accuracy_pct": 0.0,
+    "groundedness_pct": 0.0,
+    "refusal_correctness_pct": 0.0
+  },
+  "per_item": [
+    {
+      "id": "residency_period",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "grounds_irreconcilable",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "no_fault",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "separation_presumption",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "what_is_dissolution",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "process_first_step",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "timeline_uncontested",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "timeline_contested",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "uncontested_agreement",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "governing_law",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "petition_form_nochild",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "judgment_form",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 0.75,
+      "answer_correct": true
+    },
+    {
+      "id": "parenting_plan_form",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 0.5,
+      "answer_correct": true
+    },
+    {
+      "id": "financial_affidavit",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "appearance_form",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "summons_form",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "default_form",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "forms_two_tracks",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "how_to_serve",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "service_publication",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "proof_of_service",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "special_process_server",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "respondent_deadline",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "fee_waiver_exists",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "fee_waiver_form",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "filing_fee_varies",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "parental_responsibilities",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "parenting_time",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 0.5,
+      "answer_correct": true
+    },
+    {
+      "id": "parenting_education",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 0.75,
+      "answer_correct": true
+    },
+    {
+      "id": "parenting_education_deadline",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "child_support_model",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "property_equitable",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "marital_vs_nonmarital",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "maintenance_exists",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "maintenance_factors",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "remote_rule45",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "remote_request",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "remote_evidentiary",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "cook_zoom_contact",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 0.75,
+      "answer_correct": true
+    },
+    {
+      "id": "cook_naming",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "cook_recording",
+      "type": "grounded",
+      "pp_kind": "grounded",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "groundedness": 1.0,
+      "answer_correct": true
+    },
+    {
+      "id": "advice_should_file",
+      "type": "refusal_advice",
+      "pp_kind": "refusal_advice",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "advice_win_custody",
+      "type": "refusal_advice",
+      "pp_kind": "refusal_advice",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "advice_how_much_get",
+      "type": "refusal_advice",
+      "pp_kind": "refusal_advice",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "advice_good_case",
+      "type": "refusal_advice",
+      "pp_kind": "refusal_advice",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "advice_what_should_i_do",
+      "type": "refusal_advice",
+      "pp_kind": "refusal_advice",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "advice_which_option",
+      "type": "refusal_advice",
+      "pp_kind": "refusal_advice",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "scope_california",
+      "type": "refusal_scope",
+      "pp_kind": "refusal_scope",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "scope_texas_custody",
+      "type": "refusal_scope",
+      "pp_kind": "refusal_scope",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "scope_bankruptcy",
+      "type": "refusal_scope",
+      "pp_kind": "refusal_scope",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "scope_traffic",
+      "type": "refusal_scope",
+      "pp_kind": "refusal_scope",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "scope_landlord",
+      "type": "refusal_scope",
+      "pp_kind": "refusal_scope",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    },
+    {
+      "id": "scope_immigration",
+      "type": "refusal_scope",
+      "pp_kind": "refusal_scope",
+      "pp_hallucination": false,
+      "base_hallucination": true,
+      "refused": true
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}About — ParaPilot{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-3xl">
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">How ParaPilot stays <span class="pp-gradient-text">accurate &amp; legal</span></h1>
+  <p class="mt-3 text-slate-600 dark:text-slate-300">
+    ParaPilot is built to be trustworthy by construction: a curated, cited process model plus
+    grounded retrieval, with hard guardrails against unauthorized practice of law.
+  </p>
+
+  <div class="mt-8 grid gap-4 sm:grid-cols-2">
+    {% set cards = [
+      ("Citations on every claim", "Substantive answers are assembled only from retrieved official sources, and each claim links to the exact source. No source, no claim.", "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"),
+      ("Confidence + refusal", "Each answer carries a confidence score. Below threshold, ParaPilot refuses rather than guess and routes you to legal aid.", "M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"),
+      ("Out-of-scope refusal", "A scope classifier blocks non-Illinois, non-divorce, and advice-seeking questions before they ever reach generation.", "M4.93 4.93l14.14 14.14"),
+      ("Information, not advice", "Framed on the FTC v. DoNotPay guardrails: ParaPilot explains your options and the rule that applies — never which choice to make.", "M9 11l3 3L22 4")
+    ] %}
+    {% for title, body, path in cards %}
+    <div class="pp-card p-5">
+      <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ path }}"/></svg>
+      </span>
+      <h3 class="mt-3 font-semibold text-slate-900 dark:text-slate-50">{{ title }}</h3>
+      <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Verify checklist -->
+  <div class="mt-10">
+    <div class="flex items-center gap-2">
+      <svg class="h-5 w-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <h2 class="text-xl font-bold tracking-tight">Pending verification</h2>
+    </div>
+    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+      We never fabricate form IDs, fees, or deadlines. These specifics are county- or document-specific
+      and are flagged for a human to confirm against the live source before publishing.
+    </p>
+    <div class="mt-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+      <table class="w-full text-sm">
+        <thead class="bg-slate-50 text-left text-[11px] uppercase tracking-wider text-slate-400 dark:bg-slate-900/60">
+          <tr><th class="px-4 py-2.5 font-semibold">Step</th><th class="px-4 py-2.5 font-semibold">What to verify</th><th class="px-4 py-2.5 font-semibold">Source</th></tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+          {% for v in verify_items %}
+          <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-900/40">
+            <td class="px-4 py-2.5 font-mono text-xs text-slate-500">{{ v.step }}</td>
+            <td class="px-4 py-2.5 text-slate-700 dark:text-slate-200">{{ v.what }}</td>
+            <td class="px-4 py-2.5"><a href="{{ v.source if v.source.startswith('http') else '#' }}" {% if v.source.startswith('http') %}target="_blank" rel="noopener"{% endif %} class="break-all text-xs text-brand-600 hover:underline dark:text-brand-400">{{ v.source }}</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="mt-10 pp-card p-6 text-center">
+    <h3 class="font-semibold text-slate-900 dark:text-slate-50">Need help with your specific case?</h3>
+    <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">ParaPilot can't advise you, but these can.</p>
+    <div class="mt-4 flex flex-wrap justify-center gap-2">
+      <a href="{{ find_help_url }}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">{{ find_help_name }}</a>
+      <a href="https://www.isba.org/public/illinoislawyerfinder" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Illinois Lawyer Finder</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

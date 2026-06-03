@@ -1,0 +1,144 @@
+/* ParaPilot design system — refinements on top of Tailwind utilities.
+   Clean modern SaaS: indigo/violet accent, Inter, generous whitespace,
+   light + dark. */
+
+:root {
+  --pp-accent: 99 102 241;        /* indigo-500  */
+  --pp-accent-strong: 79 70 229;  /* indigo-600  */
+  --pp-violet: 139 92 246;        /* violet-500  */
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle page background gradient (light + dark). */
+.pp-bg {
+  background-image:
+    radial-gradient(60rem 60rem at 110% -10%, rgb(var(--pp-violet) / 0.10), transparent 55%),
+    radial-gradient(50rem 50rem at -10% 0%, rgb(var(--pp-accent) / 0.10), transparent 50%);
+}
+.dark .pp-bg {
+  background-image:
+    radial-gradient(60rem 60rem at 110% -10%, rgb(var(--pp-violet) / 0.16), transparent 55%),
+    radial-gradient(50rem 50rem at -10% 0%, rgb(var(--pp-accent) / 0.14), transparent 50%);
+}
+
+/* Gradient brand text. */
+.pp-gradient-text {
+  background-image: linear-gradient(
+    100deg, rgb(var(--pp-accent-strong)), rgb(var(--pp-violet))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card. */
+.pp-card {
+  border-radius: 1rem;
+  border: 1px solid rgb(226 232 240);          /* slate-200 */
+  background: rgb(255 255 255 / 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px -12px rgb(15 23 42 / 0.12);
+}
+.dark .pp-card {
+  border-color: rgb(51 65 85 / 0.7);           /* slate-700 */
+  background: rgb(15 23 42 / 0.6);             /* slate-900 */
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 28px -14px rgb(0 0 0 / 0.6);
+}
+
+/* Stepper rail. */
+.pp-rail::before {
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom, rgb(var(--pp-accent) / 0.5), rgb(var(--pp-violet) / 0.35)
+  );
+}
+
+/* Step node button. */
+.pp-step {
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease,
+    background-color .12s ease;
+}
+.pp-step:hover { transform: translateY(-1px); }
+.pp-step[data-active="true"] {
+  border-color: rgb(var(--pp-accent-strong));
+  box-shadow: 0 0 0 3px rgb(var(--pp-accent) / 0.18);
+}
+
+/* Step index bubble. */
+.pp-bubble {
+  display: grid;
+  place-items: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
+  background: linear-gradient(135deg, rgb(var(--pp-accent)), rgb(var(--pp-violet)));
+  box-shadow: 0 4px 12px -4px rgb(var(--pp-accent) / 0.6);
+}
+.pp-bubble--sub {
+  background: linear-gradient(135deg, rgb(245 158 11), rgb(234 88 12)); /* amber->orange */
+  box-shadow: 0 4px 12px -4px rgb(234 88 12 / 0.5);
+}
+
+/* Inline citation chip. */
+.pp-cite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding: 0 0.3rem;
+  margin: 0 0.08rem;
+  border-radius: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: super;
+  color: rgb(var(--pp-accent-strong));
+  background: rgb(var(--pp-accent) / 0.12);
+  text-decoration: none;
+  transition: background-color .12s ease;
+}
+.pp-cite:hover { background: rgb(var(--pp-accent) / 0.24); }
+
+/* Confidence meter. */
+.pp-meter { height: 0.5rem; border-radius: 999px; background: rgb(226 232 240); overflow: hidden; }
+.dark .pp-meter { background: rgb(51 65 85); }
+.pp-meter > span {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, rgb(var(--pp-accent)), rgb(var(--pp-violet)));
+}
+
+/* htmx loading affordance. */
+.htmx-indicator { opacity: 0; transition: opacity .15s ease; }
+.htmx-request .htmx-indicator { opacity: 1; }
+.htmx-request.htmx-indicator { opacity: 1; }
+
+/* Fade-in for swapped content. */
+@keyframes pp-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pp-fade { animation: pp-fade-in .22s ease both; }
+
+/* Focus ring. */
+.pp-focus:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(var(--pp-accent) / 0.4);
+}

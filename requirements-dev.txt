@@ -1,0 +1,8 @@
+-r requirements.txt
+pytest>=8.0
+pytest-cov>=4.1
+
+# Optional LLM providers — only used when an API key is set.
+# The app runs fully offline on the deterministic stub provider without these.
+anthropic>=0.40
+openai>=1.40

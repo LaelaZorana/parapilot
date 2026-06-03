@@ -1,0 +1,75 @@
+{
+  "source_id": "illinoiscourts_forms",
+  "title": "Approved Statewide Forms — Divorce, Child Support & Maintenance",
+  "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/",
+  "publisher": "Illinois Courts (Administrative Office of the Illinois Courts)",
+  "jurisdiction": "IL",
+  "topic": "forms",
+  "retrieved": "2026-06-03",
+  "license_note": "Public government forms catalog. Codes shown (DWC/DNC/DIV/DCS) are the catalog labels used by illinoiscourts.gov, not statutory citations.",
+  "chunks": [
+    {
+      "id": "forms_overview",
+      "heading": "Statewide approved divorce forms",
+      "text": "Illinois has standardized, statewide-approved court forms for divorce that all Illinois courts must accept. The forms are organized into two tracks: 'Divorce with Children' and 'Divorce without Children Under 18.' Each track has its own instructions, petition, and judgment forms, plus shared forms for service and default. Forms are ADA-accessible PDFs that accept both handwritten and typed entries.",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance",
+      "tags": ["forms", "divorce", "with children", "without children"]
+    },
+    {
+      "id": "forms_no_children",
+      "heading": "Divorce WITHOUT children forms",
+      "text": "For a divorce without children under 18, the statewide approved forms include: 'How to Get a Divorce Instructions (Divorce No Children)'; 'Petition for Divorce (Divorce No Children)'; 'Judgment of Dissolution of Marriage/Civil Union (Divorce No Children)'; and 'Certification Agreement (Divorce No Children)'. The petition starts the case; the judgment is what the judge signs to end the marriage.",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance",
+      "tags": ["forms", "without children", "petition", "judgment", "certification agreement"]
+    },
+    {
+      "id": "forms_with_children",
+      "heading": "Divorce WITH children forms",
+      "text": "For a divorce with children, the statewide approved forms include: 'How To Get a Divorce with Children Instructions'; 'Petition for Divorce with Children'; 'Other Information about Children'; 'Parenting Plan'; 'Judgment of Dissolution of Marriage/Civil Union with Children'; and the 'Certification Agreement'. The Parenting Plan sets out parenting time and decision-making for the children.",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance",
+      "tags": ["forms", "with children", "petition", "parenting plan", "judgment", "other information about children"]
+    },
+    {
+      "id": "forms_support",
+      "heading": "Support order forms",
+      "text": "For child support, the statewide forms include 'How to Get an Order for Support', the 'Order for Support', and a 'Support Information Sheet'. These are used to establish or document a child support obligation.",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance",
+      "tags": ["forms", "child support", "order for support"]
+    },
+    {
+      "id": "forms_service",
+      "heading": "Service-of-process forms (summons, sheriff, special process server)",
+      "text": "Shared divorce forms used to serve the other spouse include the 'Divorce Summons', the 'Letter to the Sheriff (Serving a Summons and Forms)', the 'Letter to the Special Process Server', and 'How to Serve a Summons' instructions. In most cases you file a general summons so the sheriff (or an appointed special process server) can deliver notice to the respondent.",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/summons",
+      "tags": ["forms", "summons", "service", "sheriff", "special process server"]
+    },
+    {
+      "id": "forms_default",
+      "heading": "Default forms (when the spouse does not respond)",
+      "text": "If a spouse is properly served and does not respond within the required time, shared divorce forms include the 'Motion for Default' and the 'Order for Default', which ask the court to proceed without the respondent's participation.",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance",
+      "tags": ["forms", "default", "no response", "did not respond", "never responded", "spouse won't respond", "no answer", "fails to respond", "what can i file"]
+    },
+    {
+      "id": "forms_appearance",
+      "heading": "Appearance form",
+      "text": "A respondent (or any party) who wants to participate in the case files an 'Appearance' form (the statewide form is titled 'Appearance and Jury Request'). ILAO also offers a blank Appearance form for divorce. Filing an Appearance tells the court and the other side that you are participating in the case.",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/circuit-forms/forms-appearance",
+      "tags": ["forms", "appearance", "respondent", "response"]
+    },
+    {
+      "id": "forms_financial_affidavit",
+      "heading": "Financial Affidavit (Family & Divorce Cases)",
+      "text": "The statewide form 'Financial Affidavit (Family & Divorce Cases)' (approved 06/2025) is a sworn statement of a party's income, expenses, assets, and debts. It captures employment and business details, child support information, health insurance, debts and liabilities, cash and accounts, investments, property and business interests, retirement accounts, and personal property. Courts commonly require it when money is in dispute — for example contested support, maintenance, or property issues. Instructions: 'How to Complete a Financial Affidavit (Family & Divorce Cases)' (approved 06/2025).",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/financial-affidavit/",
+      "tags": ["forms", "financial affidavit", "income", "assets", "debts", "support"]
+    },
+    {
+      "id": "forms_fee_waiver",
+      "heading": "Fee-waiver forms",
+      "text": "To ask the court to waive court fees, the statewide approved forms (approved 08/2025) are: 'How to Request a Fee Waiver' (instructions), 'Application for Waiver of Court Fees' (the application you file), and 'Order on Application for Waiver of Court Fees' (the judge's decision). The Fee Waiver forms are available in English, Spanish, Polish, Arabic, Chinese, Russian, and Korean. The specific income thresholds and eligibility criteria are stated inside the Application PDF itself.",
+      "url": "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/fee-waiver-civil",
+      "tags": ["forms", "fee waiver", "application for waiver of court fees", "indigent"]
+    }
+  ]
+}

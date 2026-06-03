@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Env / secrets
+.env
+*.local
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Ingestion output — large refreshed corpus snapshots are not committed.
+# The small, bundled SEED corpus in data/corpus/*.json IS committed (see below).
+data/corpus/_fetched/
+data/corpus/*.raw.html
+!data/corpus/*.json
+.venv-audit/
+.venv*/
+.claude/

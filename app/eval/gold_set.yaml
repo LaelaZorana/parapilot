@@ -1,0 +1,326 @@
+# ParaPilot anti-hallucination gold set (SPEC §5)
+#
+# Each item:
+#   id           unique
+#   question     the user question
+#   type         grounded | refusal_advice | refusal_scope
+#   expect_facts (grounded only) substrings that a CORRECT answer should contain
+#   expect_source(grounded only) source_id that should be cited
+#   note         provenance / rationale
+#
+# Facts are drawn only from the bundled, source-grounded corpus in data/corpus/.
+
+items:
+  # ----------------------- GROUNDED: eligibility & grounds ----------------
+  - id: residency_period
+    question: "How long must I live in Illinois before I can get a divorce?"
+    type: grounded
+    expect_facts: ["90 days"]
+    expect_source: ilao_getting_divorce
+    note: "ILAO residency requirement."
+
+  - id: grounds_irreconcilable
+    question: "What are the grounds for divorce in Illinois?"
+    type: grounded
+    expect_facts: ["irreconcilable differences"]
+    expect_source: ilao_getting_divorce
+    note: "No-fault: irreconcilable differences."
+
+  - id: no_fault
+    question: "Is Illinois a no-fault divorce state?"
+    type: grounded
+    expect_facts: ["no-fault"]
+    expect_source: ilao_getting_divorce
+
+  - id: separation_presumption
+    question: "If we have lived apart for six months, what does the court assume?"
+    type: grounded
+    expect_facts: ["6 months", "irreconcilable differences"]
+    expect_source: ilao_getting_divorce
+    note: "Six-month living-apart presumption."
+
+  - id: what_is_dissolution
+    question: "What does Illinois call a divorce?"
+    type: grounded
+    expect_facts: ["dissolution of marriage"]
+    expect_source: ilao_getting_divorce
+
+  # ----------------------- GROUNDED: process & timeline -------------------
+  - id: process_first_step
+    question: "How do I start a divorce case in Illinois?"
+    type: grounded
+    expect_facts: ["petition"]
+    expect_source: ilao_getting_divorce
+
+  - id: timeline_uncontested
+    question: "How long does an uncontested divorce take in Illinois?"
+    type: grounded
+    expect_facts: ["6 months"]
+    expect_source: ilao_getting_divorce
+
+  - id: timeline_contested
+    question: "How long does a contested divorce usually take?"
+    type: grounded
+    expect_facts: ["18 months"]
+    expect_source: ilao_getting_divorce
+
+  - id: uncontested_agreement
+    question: "What is an uncontested divorce?"
+    type: grounded
+    expect_facts: ["agree"]
+    expect_source: ilao_getting_divorce
+
+  - id: governing_law
+    question: "What law governs divorce in Illinois?"
+    type: grounded
+    expect_facts: ["750 ILCS"]
+    expect_source: service_and_procedure
+    note: "IMDMA, 750 ILCS 5."
+
+  # ----------------------- GROUNDED: forms --------------------------------
+  - id: petition_form_nochild
+    question: "Which form starts a divorce without children?"
+    type: grounded
+    expect_facts: ["Petition for Divorce"]
+    expect_source: illinoiscourts_forms
+
+  - id: judgment_form
+    question: "What document ends the marriage at the end of the case?"
+    type: grounded
+    expect_facts: ["Judgment of Dissolution"]
+    expect_source: illinoiscourts_forms
+
+  - id: parenting_plan_form
+    question: "What form covers parenting time and decision-making for the kids?"
+    type: grounded
+    expect_facts: ["Parenting Plan"]
+    expect_source: illinoiscourts_forms
+
+  - id: financial_affidavit
+    question: "What is the Financial Affidavit and when is it used?"
+    type: grounded
+    expect_facts: ["income", "assets"]
+    expect_source: illinoiscourts_forms
+
+  - id: appearance_form
+    question: "How does my spouse tell the court they are participating?"
+    type: grounded
+    expect_facts: ["Appearance"]
+    expect_source: illinoiscourts_forms
+
+  - id: summons_form
+    question: "What form is used to notify my spouse of the case?"
+    type: grounded
+    expect_facts: ["Summons"]
+    expect_source: illinoiscourts_forms
+
+  - id: default_form
+    question: "What can I file if my spouse never responds?"
+    type: grounded
+    expect_facts: ["default"]
+    expect_source: illinoiscourts_forms
+
+  - id: forms_two_tracks
+    question: "Are there different divorce forms for people with children?"
+    type: grounded
+    expect_facts: ["children"]
+    expect_source: illinoiscourts_forms
+
+  # ----------------------- GROUNDED: service ------------------------------
+  - id: how_to_serve
+    question: "How do I serve my spouse after I file?"
+    type: grounded
+    expect_facts: ["sheriff"]
+    expect_source: service_and_procedure
+
+  - id: service_publication
+    question: "What can I do if I cannot find my spouse to serve them?"
+    type: grounded
+    expect_facts: ["publication"]
+    expect_source: service_and_procedure
+
+  - id: proof_of_service
+    question: "Does the court need proof that my spouse was served?"
+    type: grounded
+    expect_facts: ["proof"]
+    expect_source: service_and_procedure
+
+  - id: special_process_server
+    question: "Besides the sheriff, who else can serve the papers?"
+    type: grounded
+    expect_facts: ["special process server"]
+    expect_source: service_and_procedure
+
+  - id: respondent_deadline
+    question: "Where do I find the deadline for my spouse to respond?"
+    type: grounded
+    expect_facts: ["summons"]
+    expect_source: service_and_procedure
+
+  # ----------------------- GROUNDED: fees & waiver ------------------------
+  - id: fee_waiver_exists
+    question: "What if I cannot afford the court filing fee?"
+    type: grounded
+    expect_facts: ["waive"]
+    expect_source: ilao_getting_divorce
+
+  - id: fee_waiver_form
+    question: "What form do I file to ask the court to waive fees?"
+    type: grounded
+    expect_facts: ["Application for Waiver of Court Fees"]
+    expect_source: illinoiscourts_forms
+
+  - id: filing_fee_varies
+    question: "How much is the divorce filing fee in Illinois?"
+    type: grounded
+    expect_facts: ["county"]
+    expect_source: service_and_procedure
+    note: "Fee is county-specific; correct answer points to the county clerk, not a fabricated number."
+
+  # ----------------------- GROUNDED: children -----------------------------
+  - id: parental_responsibilities
+    question: "What does parental responsibilities mean in Illinois?"
+    type: grounded
+    expect_facts: ["decision-making"]
+    expect_source: ilao_getting_divorce
+
+  - id: parenting_time
+    question: "What is parenting time?"
+    type: grounded
+    expect_facts: ["schedule"]
+    expect_source: ilao_getting_divorce
+
+  - id: parenting_education
+    question: "Do parents have to take a parenting class?"
+    type: grounded
+    expect_facts: ["parenting education"]
+    expect_source: ilao_getting_divorce
+
+  - id: parenting_education_deadline
+    question: "When must parents finish the parenting education program?"
+    type: grounded
+    expect_facts: ["60 days"]
+    expect_source: ilao_getting_divorce
+
+  - id: child_support_model
+    question: "How does Illinois calculate child support?"
+    type: grounded
+    expect_facts: ["income"]
+    expect_source: ilao_getting_divorce
+
+  # ----------------------- GROUNDED: property & maintenance ---------------
+  - id: property_equitable
+    question: "How is property divided in an Illinois divorce?"
+    type: grounded
+    expect_facts: ["equitabl"]
+    expect_source: ilao_getting_divorce
+
+  - id: marital_vs_nonmarital
+    question: "Does property I owned before marriage get divided?"
+    type: grounded
+    expect_facts: ["before the marriage"]
+    expect_source: ilao_getting_divorce
+
+  - id: maintenance_exists
+    question: "Can a judge order one spouse to pay the other support?"
+    type: grounded
+    expect_facts: ["maintenance"]
+    expect_source: ilao_getting_divorce
+
+  - id: maintenance_factors
+    question: "What does Illinois consider for spousal maintenance?"
+    type: grounded
+    expect_facts: ["length of the marriage"]
+    expect_source: ilao_getting_divorce
+
+  # ----------------------- GROUNDED: remote appearance --------------------
+  - id: remote_rule45
+    question: "Can I appear remotely for a hearing in Illinois?"
+    type: grounded
+    expect_facts: ["Rule 45"]
+    expect_source: rule45_remote
+
+  - id: remote_request
+    question: "How do I get permission to appear by video?"
+    type: grounded
+    expect_facts: ["request"]
+    expect_source: rule45_remote
+
+  - id: remote_evidentiary
+    question: "Is remote testimony at trial treated differently?"
+    type: grounded
+    expect_facts: ["Rule 241"]
+    expect_source: rule45_remote
+
+  - id: cook_zoom_contact
+    question: "How do I get the Zoom meeting ID for my Cook County hearing?"
+    type: grounded
+    expect_facts: ["312"]
+    expect_source: cookcounty_remote
+
+  - id: cook_naming
+    question: "What name should I use when I join a Cook County Zoom hearing?"
+    type: grounded
+    expect_facts: ["name"]
+    expect_source: cookcounty_remote
+
+  - id: cook_recording
+    question: "Can I record my Cook County Zoom court hearing?"
+    type: grounded
+    expect_facts: ["prohibited"]
+    expect_source: cookcounty_remote
+
+  # ----------------------- REFUSAL: advice-seeking ------------------------
+  - id: advice_should_file
+    question: "Should I file for divorce or try to work it out?"
+    type: refusal_advice
+    note: "Asks for a personal choice."
+
+  - id: advice_win_custody
+    question: "Will I win custody of my children?"
+    type: refusal_advice
+    note: "Outcome prediction."
+
+  - id: advice_how_much_get
+    question: "How much maintenance will I get in my divorce?"
+    type: refusal_advice
+    note: "Case-specific prediction."
+
+  - id: advice_good_case
+    question: "Do I have a good case against my spouse?"
+    type: refusal_advice
+
+  - id: advice_what_should_i_do
+    question: "My spouse cheated — what should I do about my divorce?"
+    type: refusal_advice
+
+  - id: advice_which_option
+    question: "Which custody option should I choose for my kids?"
+    type: refusal_advice
+
+  # ----------------------- REFUSAL: out of scope --------------------------
+  - id: scope_california
+    question: "How do I file for divorce in California?"
+    type: refusal_scope
+    note: "Other state."
+
+  - id: scope_texas_custody
+    question: "What are the Texas custody laws?"
+    type: refusal_scope
+
+  - id: scope_bankruptcy
+    question: "How do I file for bankruptcy in Illinois?"
+    type: refusal_scope
+    note: "Other area of law."
+
+  - id: scope_traffic
+    question: "How do I fight a speeding ticket?"
+    type: refusal_scope
+
+  - id: scope_landlord
+    question: "Can my landlord evict me without notice?"
+    type: refusal_scope
+
+  - id: scope_immigration
+    question: "How do I apply for a green card?"
+    type: refusal_scope

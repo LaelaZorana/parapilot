@@ -1,0 +1,48 @@
+{
+  "source_id": "service_and_procedure",
+  "title": "Serving your spouse & procedural basics (ILAO + Illinois forms)",
+  "url": "https://www.illinoislegalaid.org/legal-information/getting-divorce",
+  "publisher": "Illinois Legal Aid Online (ILAO) / Illinois Courts",
+  "jurisdiction": "IL",
+  "topic": "service",
+  "retrieved": "2026-06-03",
+  "license_note": "Synthesized from ILAO and the Illinois statewide service forms. Exact deadlines and the publication notice period are county/clerk-specific and must be verified.",
+  "chunks": [
+    {
+      "id": "service_overview",
+      "heading": "Serving the respondent",
+      "text": "After you file your Petition for Dissolution and the court issues a summons, you must formally notify ('serve') your spouse that a divorce case has started. The most common methods are personal service by the county sheriff, or by a court-appointed special process server. You give the sheriff the summons and a copy of the filed petition using the 'Letter to the Sheriff' form.",
+      "tags": ["service", "summons", "sheriff", "special process server", "respondent"]
+    },
+    {
+      "id": "service_proof",
+      "heading": "Proof of service",
+      "text": "Whoever serves the documents fills out a proof of service (return) showing when and how the respondent was served, and it is filed with the court. The court needs proof that the respondent was properly served before it can move forward, including before entering a default if the respondent does not respond.",
+      "tags": ["service", "proof of service", "return", "default"]
+    },
+    {
+      "id": "service_publication",
+      "heading": "Service by publication (when you cannot find your spouse)",
+      "text": "If you genuinely cannot locate your spouse after a diligent search, Illinois allows 'service by publication.' You file an affidavit describing the efforts you made to find your spouse, and notice of the case is published in a newspaper in the county. Publication has its own requirements and a notice period, and the specific newspaper, fee, and timing are set locally — confirm these with the circuit clerk.",
+      "tags": ["service", "service by publication", "cannot locate", "affidavit", "diligent search", "newspaper"]
+    },
+    {
+      "id": "respondent_response",
+      "heading": "The respondent's response",
+      "text": "After being served, the respondent has a limited time to respond by filing an Appearance and, if they disagree with anything in the petition, a Response/Answer. The exact deadline to respond is stated on the summons. If the respondent does not respond in time, the petitioner may ask the court for a default.",
+      "tags": ["respondent", "response", "appearance", "answer", "deadline", "default"]
+    },
+    {
+      "id": "filing_fee_note",
+      "heading": "Filing fees vary by county",
+      "text": "There is a fee to file the Petition for Dissolution, and additional fees can apply for service. The exact dollar amounts are set by each county circuit clerk and differ across Illinois, so check your county clerk's fee schedule. If you cannot afford the fee, you can file an Application for Waiver of Court Fees.",
+      "tags": ["filing fee", "cost", "county", "circuit clerk", "fee waiver"]
+    },
+    {
+      "id": "ilcs_750",
+      "heading": "Governing law: IMDMA (750 ILCS 5)",
+      "text": "Divorce in Illinois is governed by the Illinois Marriage and Dissolution of Marriage Act (IMDMA), 750 ILCS 5. It sets the rules for grounds (irreconcilable differences), division of marital property, maintenance, allocation of parental responsibilities, and child support. Court procedure is also governed by the Illinois Supreme Court Rules and the Code of Civil Procedure.",
+      "tags": ["law", "IMDMA", "750 ILCS 5", "statute", "governing law"]
+    }
+  ]
+}

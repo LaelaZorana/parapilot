@@ -1,0 +1,30 @@
+{
+  "source_id": "cookcounty_remote",
+  "title": "Cook County — Remote Court Proceedings",
+  "url": "https://www.cookcountycourtil.gov/about/remote-court-proceedings",
+  "publisher": "Circuit Court of Cook County",
+  "jurisdiction": "IL-Cook",
+  "topic": "remote_appearance",
+  "retrieved": "2026-06-03",
+  "license_note": "County court guidance summarized for grounding. Cook County procedures change; verify before relying.",
+  "chunks": [
+    {
+      "id": "cook_zoom_info",
+      "heading": "Getting your Zoom meeting ID and passcode (Cook County)",
+      "text": "In the Circuit Court of Cook County, many hearings are held by Zoom. To get the Zoom meeting ID and passcode for your hearing, contact the Clerk's Office online or call (312) 603-5030, or look up your case at the Clerk of the Circuit Court's online case information. The Domestic Relations and Family divisions publish their own courtroom Zoom details.",
+      "tags": ["cook county", "zoom", "meeting id", "clerk", "phone", "domestic relations"]
+    },
+    {
+      "id": "cook_join",
+      "heading": "How to join a Cook County remote hearing",
+      "text": "Before joining a Cook County Zoom hearing you must enter your name PRIOR to joining the session, using the court's naming convention (for example, self-represented parties use 'P - Party Name' for a plaintiff/petitioner). Keep both your audio and video turned off until your case is called. You can also dial in by phone at (312) 626-6799 using your hearing's Meeting ID and passcode.",
+      "tags": ["cook county", "zoom", "join", "naming convention", "dial-in", "self-represented"]
+    },
+    {
+      "id": "cook_recording",
+      "heading": "No recording of remote proceedings",
+      "text": "Recording, photographing, videotaping, or otherwise reproducing or saving Zoom or livestreamed Cook County court proceedings is strictly prohibited and can result in contempt of court.",
+      "tags": ["cook county", "recording prohibited", "contempt"]
+    }
+  ]
+}

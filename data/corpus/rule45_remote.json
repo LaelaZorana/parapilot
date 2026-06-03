@@ -1,0 +1,33 @@
+{
+  "source_id": "rule45_remote",
+  "title": "Illinois Supreme Court Rule 45 — Remote Appearances in Court Proceedings",
+  "url": "https://www.illinoiscourts.gov/rules/supreme-court-rules/article-i-general-rules",
+  "publisher": "Supreme Court of Illinois",
+  "jurisdiction": "IL",
+  "topic": "remote_appearance",
+  "retrieved": "2026-06-03",
+  "license_note": "Rule text summarized/excerpted from the Illinois Supreme Court announcement. Verify exact current wording against the official rule before relying on it.",
+  "chunks": [
+    {
+      "id": "rule45_core",
+      "heading": "Rule 45 — when a court may allow remote participation",
+      "text": "Under Illinois Supreme Court Rule 45 (effective May 26, 2020), the court may, upon request or on its own order, allow a case participant to participate in a civil or criminal matter remotely, including by telephone or video conference. This means a litigant in a civil case such as a divorce can ask the court for permission to appear remotely instead of in person.",
+      "url": "https://www.illinoiscourts.gov/News/390/Illinois-Supreme-Court-Amends-Rules-to-Support-use-of-Remote-Hearings-in-Court-Proceedings/news-detail/",
+      "tags": ["remote", "rule 45", "video", "telephone", "zoom", "civil"]
+    },
+    {
+      "id": "rule45_evidentiary",
+      "heading": "Evidentiary hearings and testimony (Rule 241)",
+      "text": "Rule 45 broadly covers participating remotely. For contested evidentiary proceedings where a witness testifies by video from a remote location, Illinois Supreme Court Rule 241 applies separately and generally requires 'good cause' and 'appropriate safeguards' for remote testimony. So routine, non-testimonial appearances are easier to do remotely than full evidentiary trials.",
+      "url": "https://www.illinoiscourts.gov/News/390/Illinois-Supreme-Court-Amends-Rules-to-Support-use-of-Remote-Hearings-in-Court-Proceedings/news-detail/",
+      "tags": ["remote", "rule 241", "evidentiary", "testimony", "good cause"]
+    },
+    {
+      "id": "rule45_request",
+      "heading": "How remote appearance gets authorized",
+      "text": "Rule 45 lets a court permit remote participation 'upon request or on its own order.' In practice, each judicial circuit and individual judge sets its own remote-appearance procedure, so you should check your specific court's policy and follow its process to request remote appearance and obtain the video link.",
+      "url": "https://www.illinoiscourts.gov/News/390/Illinois-Supreme-Court-Amends-Rules-to-Support-use-of-Remote-Hearings-in-Court-Proceedings/news-detail/",
+      "tags": ["remote", "request", "procedure", "circuit", "judge"]
+    }
+  ]
+}

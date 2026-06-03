@@ -1,0 +1,403 @@
+id: il_divorce
+namespace: il/divorce
+title: "Illinois Divorce (Dissolution of Marriage)"
+description: >
+  A procedural roadmap for an Illinois divorce, grounded in Illinois Legal Aid
+  Online, the Illinois statewide approved forms, and the Illinois Supreme Court
+  Rules. Legal information, not legal advice. County procedures and exact fees,
+  deadlines, and form IDs vary — items marked verify:true must be confirmed
+  against the cited source before relying on them.
+jurisdiction: IL
+start: check_eligibility
+citations:
+  - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+  - "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/"
+
+steps:
+  # ============================ MAIN LINE ================================
+  - id: check_eligibility
+    title: "Confirm you can file in Illinois"
+    summary: >
+      Before filing, confirm Illinois can hear your case. At least one spouse
+      must have lived in Illinois for at least 90 days, and Illinois is a
+      no-fault state — you file on the ground of irreconcilable differences.
+    required_actions:
+      - "Confirm at least one spouse has lived in Illinois for 90+ days"
+      - "Identify the county to file in (where you or your spouse lives)"
+      - "Understand the ground is 'irreconcilable differences' (no fault needed)"
+    who_to_contact: "Your county circuit clerk's office"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    transitions:
+      - to: choose_track
+        label: "I meet the residency requirement"
+
+  - id: choose_track
+    title: "Pick your forms track: with children or without"
+    summary: >
+      Illinois has two statewide form sets. If you and your spouse have a child
+      under 18 together, use the 'Divorce with Children' forms; otherwise use the
+      'Divorce without Children' forms. This choice determines which petition and
+      judgment you use and whether a Parenting Plan is required.
+    preconditions: [check_eligibility]
+    required_actions:
+      - "Decide whether you have a child under 18 together"
+      - "Read the matching 'How to Get a Divorce' instructions"
+    citations:
+      - "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    transitions:
+      - to: prepare_petition
+        label: "Continue"
+      - when: "we have a child under 18 together"
+        to: with_children
+        label: "We have children — open the children sub-flow"
+    help_triggers:
+      - when: "we have a child under 18 together"
+        to: with_children
+
+  - id: prepare_petition
+    title: "Prepare and file the Petition for Dissolution"
+    summary: >
+      Start the case by completing and filing the Petition for Divorce that
+      matches your track. Filing it opens your court case and assigns a case
+      number. There is a filing fee that varies by county; if you can't afford
+      it, you can ask the court to waive it.
+    preconditions: [choose_track]
+    required_forms:
+      - form_id: "DNC Petition"
+        name: "Petition for Divorce (Divorce No Children)"
+        must_contain:
+          - "names of both spouses"
+          - "date and place of marriage"
+          - "grounds: irreconcilable differences"
+          - "statement of residency"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+      - form_id: "DWC Petition"
+        name: "Petition for Divorce with Children"
+        must_contain:
+          - "names of both spouses and the children"
+          - "date and place of marriage"
+          - "grounds: irreconcilable differences"
+          - "information about the children"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    deadlines:
+      - description: "No statutory filing deadline, but the case is not pending until the petition is filed."
+        basis: "ILAO process overview"
+        citation: "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    who_to_contact: "Your county circuit clerk's office (for filing and the fee schedule)"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+      - "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    transitions:
+      - to: serve_respondent
+        label: "Petition filed"
+    help_triggers:
+      - when: "can't afford the filing fee"
+        to: fee_waiver
+    verify: true  # exact filing fee dollar amount is county-specific — confirm with the circuit clerk
+
+  - id: serve_respondent
+    title: "Serve your spouse (the respondent)"
+    summary: >
+      After filing, you must formally notify ('serve') your spouse that a case
+      has started. The court issues a summons; the county sheriff or a
+      court-appointed special process server delivers it with a copy of your
+      petition. If you truly can't locate your spouse, there's a separate path:
+      service by publication.
+    preconditions: [prepare_petition]
+    required_forms:
+      - form_id: "DIV Summons"
+        name: "Divorce Summons"
+        must_contain:
+          - "case number"
+          - "names of both parties"
+          - "respondent's deadline to respond"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/summons"
+      - form_id: "DIV Letter to Sheriff Summons"
+        name: "Letter to the Sheriff (Serving a Summons and Forms)"
+        must_contain:
+          - "respondent's address for service"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    deadlines:
+      - description: "Service must be completed (and proof filed) before the court can proceed or grant a default."
+        basis: "Confirm the response deadline printed on the summons and your county's rules."
+        citation: "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+        verify: true
+    who_to_contact: "County sheriff's office, or a licensed special process server"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+      - "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/summons"
+    transitions:
+      - to: respondent_response
+        label: "Spouse was served"
+      - when: "respondent cannot be located after a diligent search"
+        to: service_by_publication
+        label: "Can't find my spouse"
+    help_triggers:
+      - when: "can't afford the service fee"
+        to: fee_waiver
+
+  - id: respondent_response
+    title: "Your spouse responds (or doesn't)"
+    summary: >
+      Once served, the respondent has a limited time (stated on the summons) to
+      file an Appearance and, if they disagree, a Response. If they don't respond
+      in time, you can ask the court to proceed by default.
+    preconditions: [serve_respondent]
+    required_forms:
+      - form_id: "Appearance and Jury Request"
+        name: "Appearance (filed by the respondent)"
+        must_contain:
+          - "case number"
+          - "the responding party's name and contact information"
+        source: "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/circuit-forms/forms-appearance"
+      - form_id: "DIV Motion for Default"
+        name: "Motion for Default (if the respondent doesn't answer)"
+        must_contain:
+          - "case number"
+          - "proof the respondent was served"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    deadlines:
+      - description: "The respondent's deadline to appear/respond is printed on the summons."
+        basis: "Summons / county rules"
+        citation: "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+        verify: true
+    who_to_contact: "Your county circuit clerk's office"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    transitions:
+      - to: financial_disclosure
+        label: "Move toward resolution"
+
+  - id: financial_disclosure
+    title: "Exchange financial information"
+    summary: >
+      When money is in dispute — support, maintenance, or dividing property and
+      debt — each spouse usually files a sworn Financial Affidavit disclosing
+      income, expenses, assets, and debts. Illinois divides marital property
+      equitably (fairly), which doesn't always mean equally.
+    preconditions: [respondent_response]
+    required_forms:
+      - form_id: "Financial Affidavit (Family & Divorce Cases)"
+        name: "Financial Affidavit (Family & Divorce Cases)"
+        must_contain:
+          - "income and employment"
+          - "monthly expenses"
+          - "assets and accounts"
+          - "debts and liabilities"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/financial-affidavit/"
+    who_to_contact: "Your county circuit clerk's office"
+    citations:
+      - "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/financial-affidavit/"
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    transitions:
+      - to: resolve_issues
+        label: "Continue"
+
+  - id: resolve_issues
+    title: "Resolve the issues (agree or have the judge decide)"
+    summary: >
+      Settle the open issues — property, debts, maintenance, and, if you have
+      children, parental responsibilities and child support. If you agree, you
+      put the terms in a written settlement (and a Parenting Plan if there are
+      children). If you can't agree, the judge decides at a hearing or trial.
+    preconditions: [financial_disclosure]
+    required_forms:
+      - form_id: "DNC Certification Agreement"
+        name: "Certification / settlement of agreed terms"
+        must_contain:
+          - "the agreed division of property and debts"
+          - "any agreed maintenance"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    who_to_contact: "Court-connected mediation or the circuit clerk for hearing dates"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    transitions:
+      - to: prove_up
+        label: "Issues resolved"
+      - when: "you cannot attend a hearing in person"
+        to: remote_appearance
+        label: "I need to appear remotely"
+    help_triggers:
+      - when: "you have children and need a parenting plan"
+        to: with_children
+      - when: "you cannot attend in person"
+        to: remote_appearance
+
+  - id: prove_up
+    title: "Final hearing ('prove-up') and Judgment for Dissolution"
+    summary: >
+      At the final hearing the judge confirms the requirements are met and, if
+      everything is in order, enters the Judgment of Dissolution of Marriage,
+      which legally ends the marriage. An uncontested case can often finish in
+      about 6 months; a contested case commonly takes 18 months or more.
+    preconditions: [resolve_issues]
+    required_forms:
+      - form_id: "DNC Judgment for Dissolution"
+        name: "Judgment of Dissolution of Marriage/Civil Union (Divorce No Children)"
+        must_contain:
+          - "the terms ending the marriage"
+          - "division of property and debts"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+      - form_id: "DWC Judgment for Dissolution"
+        name: "Judgment of Dissolution of Marriage/Civil Union with Children"
+        must_contain:
+          - "the terms ending the marriage"
+          - "parental responsibilities and child support"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    deadlines:
+      - description: "Uncontested ~6 months or more; contested ~18 months or more (varies by county)."
+        basis: "ILAO timeline"
+        citation: "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    who_to_contact: "Your assigned courtroom / the circuit clerk"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    transitions:
+      - when: "you cannot attend the final hearing in person"
+        to: remote_appearance
+        label: "Appear remotely for prove-up"
+    help_triggers:
+      - when: "you cannot attend in person"
+        to: remote_appearance
+
+  # ============================ SUB-FLOWS ===============================
+  - id: with_children
+    title: "If you have children: parental responsibilities & parenting plan"
+    summary: >
+      When the spouses share a child under 18, the case must address 'parental
+      responsibilities' — parenting time (the schedule) and decision-making
+      (education, health, religion, activities) — and child support. Parents are
+      encouraged to agree on a Parenting Plan; if they can't, the judge decides
+      based on the child's best interests.
+    is_subflow: true
+    trigger: "we have a child under 18 together"
+    required_actions:
+      - "Complete the 'Other Information about Children' form"
+      - "Prepare a Parenting Plan (parenting time + decision-making)"
+      - "Complete the court-approved parenting education program"
+    required_forms:
+      - form_id: "DWC Parenting Plan"
+        name: "Parenting Plan"
+        must_contain:
+          - "a parenting-time schedule"
+          - "allocation of significant decision-making"
+          - "the children's information"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+      - form_id: "DWC Other Information Petition"
+        name: "Other Information about Children"
+        must_contain:
+          - "each child's residence history"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+      - form_id: "DCS Order For Support"
+        name: "Order for Support (child support)"
+        must_contain:
+          - "the support amount"
+          - "the income basis"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    deadlines:
+      - description: "Parents must complete a court-approved parenting education program, generally within 60 days after the first meeting (status date) with the judge."
+        basis: "ILAO parenting education requirement"
+        citation: "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+        verify: true
+    who_to_contact: "The Center for Divorce Education (approved parenting course) and your courtroom"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+      - "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance"
+    transitions:
+      - to: resolve_issues
+        label: "Return to resolving the issues"
+
+  - id: remote_appearance
+    title: "Appear remotely (Zoom) instead of in person"
+    summary: >
+      Illinois permits remote appearances for many civil hearings under Illinois
+      Supreme Court Rule 45 (effective May 26, 2020): the court may, on request
+      or on its own order, allow you to participate by video or phone. Each
+      circuit and judge sets its own procedure, so follow your specific court's
+      policy to request it and get the link.
+    is_subflow: true
+    trigger: "cannot attend in person"
+    required_actions:
+      - "Check your court/judge's remote-appearance policy (each circuit differs)"
+      - "Submit any required request form or email by the court's stated deadline"
+      - "Get your hearing's video link / Meeting ID and passcode from the clerk"
+      - "Test the video link before the hearing"
+    deadlines:
+      - description: "Submit the remote-appearance request by your court's stated deadline (set locally)."
+        basis: "Ill. Sup. Ct. Rule 45 — 'upon request or on its own order'"
+        citation: "https://www.illinoiscourts.gov/News/390/Illinois-Supreme-Court-Amends-Rules-to-Support-use-of-Remote-Hearings-in-Court-Proceedings/news-detail/"
+        verify: true
+    who_to_contact: >
+      The courtroom clerk / call center for your judicial circuit. In Cook
+      County, contact the Clerk's Office or call (312) 603-5030 for the Zoom
+      Meeting ID and passcode (phone dial-in: (312) 626-6799).
+    citations:
+      - "https://www.illinoiscourts.gov/rules/supreme-court-rules/article-i-general-rules"
+      - "https://www.cookcountycourtil.gov/about/remote-court-proceedings"
+    transitions:
+      - to: prove_up
+        label: "Return to the final hearing"
+
+  - id: service_by_publication
+    title: "Serve by publication (when you can't find your spouse)"
+    summary: >
+      If you genuinely can't locate your spouse after a diligent search, Illinois
+      lets you serve by publication. You file an affidavit describing your search
+      efforts, and notice of the case is published in a newspaper in the county.
+      Publication has its own notice period and fee, set locally.
+    is_subflow: true
+    trigger: "respondent cannot be located after a diligent search"
+    required_actions:
+      - "Make and document a diligent search for your spouse"
+      - "File an affidavit of diligent search / for service by publication"
+      - "Arrange newspaper publication through the circuit clerk"
+    deadlines:
+      - description: "Publication runs for a required notice period before you can proceed; the period, newspaper, and fee are set locally."
+        basis: "Confirm with the circuit clerk and local rules."
+        citation: "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+        verify: true
+    who_to_contact: "Your county circuit clerk's office"
+    citations:
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    transitions:
+      - to: respondent_response
+        label: "After publication, continue"
+    help_triggers:
+      - when: "can't afford the publication fee"
+        to: fee_waiver
+    verify: true  # the exact affidavit form, notice period, and publication fee are county-specific
+
+  - id: fee_waiver
+    title: "Ask the court to waive your fees"
+    summary: >
+      If you can't afford the filing or service fees, you can file an Application
+      for Waiver of Court Fees. The judge reviews your finances and can waive all
+      or part of your court fees. ILAO offers a free guided 'Easy Form' to help
+      you complete it.
+    is_subflow: true
+    trigger: "can't afford the filing/service fee"
+    required_forms:
+      - form_id: "Application for Waiver of Court Fees"
+        name: "Application for Waiver of Court Fees"
+        must_contain:
+          - "your income"
+          - "your household size"
+          - "your expenses and any public benefits"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/fee-waiver-civil"
+      - form_id: "Order on Application for Waiver of Court Fees"
+        name: "Order on Application for Waiver of Court Fees"
+        must_contain:
+          - "the judge's decision on the waiver"
+        source: "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/fee-waiver-civil"
+    deadlines:
+      - description: "File the fee-waiver application together with (or before) the document whose fee you want waived."
+        basis: "Illinois fee-waiver instructions"
+        citation: "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/fee-waiver-civil"
+    who_to_contact: "Your county circuit clerk's office; ILAO Easy Form for help completing it"
+    citations:
+      - "https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/fee-waiver-civil"
+      - "https://www.illinoislegalaid.org/legal-information/getting-divorce"
+    transitions:
+      - to: prepare_petition
+        label: "Return to filing"
+    verify: true  # exact income thresholds / eligibility are inside the Application PDF — confirm

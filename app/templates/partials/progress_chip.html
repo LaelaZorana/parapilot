@@ -1,0 +1,8 @@
+<span class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold {% if done %}bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300{% else %}bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400{% endif %}">
+  {% if done %}
+  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  Done
+  {% else %}
+  Not done
+  {% endif %}
+</span>

@@ -1,0 +1,18 @@
+services:
+  parapilot:
+    build: .
+    image: parapilot:latest
+    ports:
+      - "8000:8000"
+    environment:
+      # Offline by default. To use a real LLM, uncomment a provider + key.
+      PARAPILOT_PROVIDER: stub
+      PARAPILOT_DB_URL: sqlite:////data/parapilot.db
+      # PARAPILOT_PROVIDER: anthropic
+      # ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+    volumes:
+      - parapilot_data:/data
+    restart: unless-stopped
+
+volumes:
+  parapilot_data:

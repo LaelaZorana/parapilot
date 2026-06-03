@@ -1,0 +1,35 @@
+<div id="disclaimer-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="dismissDisclaimer()"></div>
+  <div class="pp-card pp-fade relative w-full max-w-lg p-7">
+    <div class="flex items-center gap-3">
+      <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-500 text-white shadow-lg shadow-brand-500/30">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      </span>
+      <div>
+        <h2 class="text-lg font-bold tracking-tight">Welcome to ParaPilot</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Please read this first.</p>
+      </div>
+    </div>
+
+    <p class="mt-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+      {{ disclaimer_long }}
+    </p>
+
+    <ul class="mt-5 space-y-2 text-sm">
+      <li class="flex items-start gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Every substantive answer is <strong>grounded in an official source you can click</strong>.</span></li>
+      <li class="flex items-start gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>If a question asks for <strong>advice</strong> or is <strong>out of scope</strong>, ParaPilot refuses and points you to legal aid.</span></li>
+      <li class="flex items-start gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Procedures, fees, and forms vary by county — <strong>always verify</strong> before relying.</span></li>
+    </ul>
+
+    <div class="mt-7 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+      <a href="{{ find_help_url }}" target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
+        Find legal help
+      </a>
+      <button type="button" onclick="dismissDisclaimer()"
+              class="pp-focus inline-flex items-center justify-center rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+        I understand — continue
+      </button>
+    </div>
+  </div>
+</div>
