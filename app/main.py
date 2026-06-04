@@ -1,10 +1,10 @@
-"""ParaPilot FastAPI app — server-rendered (Jinja + htmx).
+"""ParaPilot FastAPI app: server-rendered (Jinja + htmx).
 
 Two main views (SPEC §7):
-  * ROADMAP  — visual stepper of the IL divorce process; click a step for its
+  * ROADMAP  : visual stepper of the IL divorce process; click a step for its
                summary, required forms (+ what each must contain), deadlines,
                who-to-call, citations, and next/branch options.
-  * ASK      — grounded chat; answers carry inline citations + confidence + the
+  * ASK      : grounded chat; answers carry inline citations + confidence + the
                disclaimer; out-of-scope/advice -> visible refusal + escalation.
 
 Everything runs offline on the stub provider with no API keys.

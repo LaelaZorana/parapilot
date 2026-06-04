@@ -2,7 +2,7 @@
 
 Produces a single ``AnswerEnvelope``. This is the anti-hallucination core:
 
-  1. Out-of-scope / advice-seeking questions never reach retrieval — they refuse.
+  1. Out-of-scope / advice-seeking questions never reach retrieval, they refuse.
   2. Weak retrieval (confidence below threshold) refuses instead of guessing.
   3. Generation is citation-restricted; the answer keeps only markers that map
      to real retrieved chunks, and if nothing is grounded we refuse.

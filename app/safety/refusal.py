@@ -1,4 +1,4 @@
-"""Refusal templates — build a safe ``AnswerEnvelope`` for any non-answer.
+"""Refusal templates: build a safe ``AnswerEnvelope`` for any non-answer.
 
 Three refusal shapes (SPEC §4, §6):
   * advice-seeking  -> "I can explain your options and the rule, but I can't

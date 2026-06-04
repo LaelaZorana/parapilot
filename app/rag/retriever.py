@@ -3,9 +3,9 @@
 SPEC §4 asks for hybrid retrieval (BM25 + embeddings) with a lean,
 offline-friendly fallback. We use:
 
-  * **BM25** — a compact, dependency-free implementation (exact keyword/term
+  * **BM25**: a compact, dependency-free implementation (exact keyword/term
     matching with length normalization). Great for form names, statute cites.
-  * **TF-IDF cosine** — scikit-learn's vectorizer with sub-linear TF and an
+  * **TF-IDF cosine**: scikit-learn's vectorizer with sub-linear TF and an
     n-gram range, used as the offline embedding fallback. Captures soft term
     overlap and phrasing the way a small embedding model would, with no model
     download and no network.

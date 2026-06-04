@@ -1,4 +1,4 @@
-// ParaPilot — small client helpers (theme toggle, first-run modal, examples).
+// ParaPilot: small client helpers (theme toggle, first-run modal, examples).
 (function () {
   "use strict";
 

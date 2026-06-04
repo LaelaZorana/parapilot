@@ -1,7 +1,7 @@
 """SQLite storage for saved progress / matters (SPEC §7).
 
 Lean SQLAlchemy setup. The DB stores a lightweight "matter" (a saved progress
-record) and per-step completion. It never stores legal advice — only the user's
+record) and per-step completion. It never stores legal advice, only the user's
 own checklist state and free-text notes.
 """
 from __future__ import annotations

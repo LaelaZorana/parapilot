@@ -116,10 +116,10 @@ ParaPilot is built to be trustworthy *by construction*, modeled on the *FTC v. D
 
 **Grounding sources** (each corpus chunk is tagged with its URL + retrieved date):
 
-- [Illinois Legal Aid Online — Getting a divorce](https://www.illinoislegalaid.org/legal-information/getting-divorce)
-- [Illinois Courts — Approved statewide forms (Divorce, Child Support & Maintenance)](https://www.illinoiscourts.gov/documents-and-forms/approved-forms/)
+- [Illinois Legal Aid Online: Getting a divorce](https://www.illinoislegalaid.org/legal-information/getting-divorce)
+- [Illinois Courts: Approved statewide forms (Divorce, Child Support & Maintenance)](https://www.illinoiscourts.gov/documents-and-forms/approved-forms/)
 - Illinois Supreme Court **Rule 45** (remote appearances) + Rule 241 (remote testimony)
-- [Circuit Court of Cook County — Remote court proceedings](https://www.cookcountycourtil.gov/about/remote-court-proceedings)
+- [Circuit Court of Cook County: Remote court proceedings](https://www.cookcountycourtil.gov/about/remote-court-proceedings)
 - Illinois Marriage and Dissolution of Marriage Act (IMDMA), **750 ILCS 5**
 
 ---
@@ -203,7 +203,7 @@ We never fabricate form IDs, fees, or deadlines. The following Illinois specific
 
 ## ⚖️ Legal information, not legal advice
 
-ParaPilot is an educational tool that explains the Illinois divorce (dissolution of marriage) process and points you to authoritative sources. **It provides legal information, not legal advice, and using it does not create an attorney-client relationship.** ParaPilot is not a lawyer and cannot tell you which choice is right for your situation. Court rules, forms, fees, and deadlines differ by county and change over time. Before you rely on anything here, verify it against the cited official source, and for advice about your own case, talk to a licensed Illinois attorney or legal aid: **[ILAO — Find Legal Help](https://www.illinoislegalaid.org/get-legal-help)** · **[Illinois Lawyer Finder (ISBA)](https://www.isba.org/public/illinoislawyerfinder)**. Content is pending legal-aid review.
+ParaPilot is an educational tool that explains the Illinois divorce (dissolution of marriage) process and points you to authoritative sources. **It provides legal information, not legal advice, and using it does not create an attorney-client relationship.** ParaPilot is not a lawyer and cannot tell you which choice is right for your situation. Court rules, forms, fees, and deadlines differ by county and change over time. Before you rely on anything here, verify it against the cited official source, and for advice about your own case, talk to a licensed Illinois attorney or legal aid: **[ILAO: Find Legal Help](https://www.illinoislegalaid.org/get-legal-help)** · **[Illinois Lawyer Finder (ISBA)](https://www.isba.org/public/illinoislawyerfinder)**. Content is pending legal-aid review.
 
 ## License
 

@@ -1,4 +1,4 @@
-"""ParaPilot — Illinois divorce procedural navigator.
+"""ParaPilot: Illinois divorce procedural navigator.
 
 Legal information, not legal advice.
 """

@@ -26,7 +26,7 @@ SOURCES: List[Source] = [
     ),
     Source(
         "illinoiscourts_forms",
-        "Approved Statewide Forms — Divorce, Child Support & Maintenance",
+        "Approved Statewide Forms: Divorce, Child Support & Maintenance",
         "https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance",
         "Illinois Courts",
         "IL",
@@ -42,7 +42,7 @@ SOURCES: List[Source] = [
     ),
     Source(
         "rule45_remote",
-        "Illinois Supreme Court Rule 45 — Remote Appearances",
+        "Illinois Supreme Court Rule 45: Remote Appearances",
         "https://www.illinoiscourts.gov/rules/supreme-court-rules/article-i-general-rules",
         "Supreme Court of Illinois",
         "IL",
@@ -50,7 +50,7 @@ SOURCES: List[Source] = [
     ),
     Source(
         "cookcounty_remote",
-        "Cook County — Remote Court Proceedings",
+        "Cook County: Remote Court Proceedings",
         "https://www.cookcountycourtil.gov/about/remote-court-proceedings",
         "Circuit Court of Cook County",
         "IL-Cook",

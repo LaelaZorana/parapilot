@@ -118,7 +118,7 @@ def classify_scope(question: str) -> ScopeResult:
     on_topic = _contains_any(q, DIVORCE_TERMS)
 
     # 1) Advice-seeking: refuse even if it's about IL divorce. This is the
-    #    UPL line — we won't tell someone which choice to make or predict
+    #    UPL line, we won't tell someone which choice to make or predict
     #    outcomes. We check this first so on-topic advice questions still refuse.
     advice = _matches_any(q, ADVICE_PATTERNS)
     if advice and on_topic:

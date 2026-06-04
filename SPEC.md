@@ -1,6 +1,6 @@
-# ParaPilot — Illinois Divorce Procedural Navigator (MVP Spec)
+# ParaPilot: Illinois Divorce Procedural Navigator (MVP Spec)
 
-> Your "legal GPS" for an Illinois divorce: plain-English, step-by-step, **grounded and cited** — legal **information, not legal advice.**
+> Your "legal GPS" for an Illinois divorce: plain-English, step-by-step, **grounded and cited**: legal **information, not legal advice.**
 
 This spec is the single source of truth. Build exactly to it, to the same deploy-ready bar as the other portfolio projects.
 
@@ -14,7 +14,7 @@ This spec is the single source of truth. Build exactly to it, to the same deploy
   - Out-of-scope (non-IL, non-divorce, or advice-seeking) → refuse + escalate to legal aid (ILAO).
   - Persistent disclaimer + one-click "Find legal help" (ILAO / Illinois Lawyer Finder).
 
-## 1. Architecture — hybrid (state machine + grounded RAG)
+## 1. Architecture: hybrid (state machine + grounded RAG)
 Two cooperating layers:
 1. **PROCESS MODEL (deterministic backbone):** the IL divorce process as a data-driven **state machine** (curated, cited, version-controlled). Hallucination-proof because it's curated data, not generation. Drives the visual roadmap, "what's next," deadlines, required forms, who-to-call.
 2. **GROUNDED RAG (the long tail):** answers free-form questions by retrieving from the ingested IL corpus + (optional) case law, with **citation-restricted generation**, confidence, and refusal.
@@ -60,7 +60,7 @@ required_actions:
 who_to_contact: "the courtroom clerk / call center for your judicial circuit"
 citations: ["Ill. Sup. Ct. Rule 45", "https://www.cookcountycourtil.gov/about/remote-court-proceedings"]
 ```
-**Build the full IL divorce flow grounded in the cited sources. Do NOT invent form IDs, fees, or deadlines — pull them from the sources or mark `verify: true` with the source URL to check.**
+**Build the full IL divorce flow grounded in the cited sources. Do NOT invent form IDs, fees, or deadlines, pull them from the sources or mark `verify: true` with the source URL to check.**
 
 ## 3. Corpus & ingestion
 Authoritative IL sources (cite every chunk with URL + retrieved date):
@@ -69,34 +69,34 @@ Authoritative IL sources (cite every chunk with URL + retrieved date):
 - Ill. Sup. Ct. Rule 45 (remote appearances)
 - Cook County remote proceedings: https://www.cookcountycourtil.gov/about/remote-court-proceedings
 - Extensible: ILCS 750 (Illinois Marriage and Dissolution of Marriage Act); local circuit rules (e.g., DuPage/18th, Cook)
-- Case law (OPTIONAL, pluggable, OFF by default): CourtListener REST API / MCP (https://www.courtlistener.com/help/api/rest/) — works fully without it.
+- Case law (OPTIONAL, pluggable, OFF by default): CourtListener REST API / MCP (https://www.courtlistener.com/help/api/rest/). Works fully without it.
 
 Ingestion pipeline (`app/rag/ingest/`): fetch → clean → chunk → embed → store. **Ship an OFFLINE SEED SNAPSHOT** (small bundled corpus in `data/corpus/`) so the app runs with no network/keys. `make ingest` refreshes from live sources.
 
 ## 4. Retrieval & generation (anti-hallucination)
 - Hybrid retrieval (TF-IDF/BM25 + embeddings; lean, offline-friendly fallback like the other repos).
 - **Citation-restricted generation:** the model may only assert what retrieved chunks support; every claim → inline clickable citation to its source chunk.
-- **Confidence score**; below threshold or no good chunk → **refuse** ("I don't have a grounded answer for that — here's how to reach legal aid").
+- **Confidence score**; below threshold or no good chunk → **refuse** ("I don't have a grounded answer for that, here's how to reach legal aid").
 - **Out-of-scope classifier:** non-IL / non-divorce / advice-seeking → refuse + escalate.
 - **Provider interface:** offline deterministic STUB (grounded *extractive* answers from retrieved chunks) + Anthropic/OpenAI when keyed. Tests + demo run on the stub.
 
 ## 5. Anti-hallucination eval (first-class artifact)
 - Gold set: ~40–60 curated IL-divorce Q&A, each with a known answer + authoritative citation, in `app/eval/gold_set.yaml`.
 - Metrics: groundedness/faithfulness (is every claim supported by a retrieved source? RAGAS-style), citation accuracy, answer correctness, and **refusal correctness** (does it correctly refuse out-of-scope/advice questions?).
-- **Baseline comparison:** run the same questions through a plain LLM (no RAG) and report the hallucination-rate delta. Publish the table in the README — this is the trust signal and the portfolio centerpiece.
+- **Baseline comparison:** run the same questions through a plain LLM (no RAG) and report the hallucination-rate delta. Publish the table in the README. This is the trust signal and the portfolio centerpiece.
 - `make eval` runs offline against the stub + gold set.
 
 ## 6. UPL / safety implementation
 - Every response object carries: `disclaimer`, `citations[]`, `is_legal_information: true`, and an `escalation` block.
-- Refusal templates for advice-seeking: "I can explain your options and the rule that applies, but I can't tell you which to choose — here's how to reach a lawyer / legal aid."
+- Refusal templates for advice-seeking: "I can explain your options and the rule that applies, but I can't tell you which to choose, here's how to reach a lawyer / legal aid."
 - Footer + first-run modal: "ParaPilot provides legal information, not legal advice…" + ILAO link.
 
 ## 7. Tech stack & UI
 - **Backend:** FastAPI (Python 3.9-compatible, like the other repos), SQLite (progress / saved matter).
-- **Frontend:** server-rendered FastAPI + Jinja + htmx, styled with the **shared design system — Tailwind, clean modern SaaS, light + dark, indigo/violet accent, Inter, generous whitespace.** Two main views:
+- **Frontend:** server-rendered FastAPI + Jinja + htmx, styled with the **shared design system: Tailwind, clean modern SaaS, light + dark, indigo/violet accent, Inter, generous whitespace.** Two main views:
   1. **ROADMAP:** a visual stepper/flowchart of the divorce process. Click a step → panel with summary, required forms + *what each must contain*, deadlines, who-to-call, citations, and next/branch options. Conditional branches visible (children? remote appearance? can't locate spouse?).
   2. **ASK:** a grounded chat. Answers show **inline citations + a confidence indicator + the disclaimer**; out-of-scope → visible refusal + escalation card.
-- **This is the flagship — it must look genuinely polished.** (Claude will design-verify via the live preview/screenshot loop after the build.)
+- **This is the flagship. It must look genuinely polished.** (Claude will design-verify via the live preview/screenshot loop after the build.)
 
 ## 8. House style (same as the other portfolio repos)
 Offline-first (no keys needed), Docker + docker-compose, GitHub Actions CI, pytest green offline, case-study README (Problem → Solution → Results + mermaid + the eval table), `.env.example`, `.gitignore`, LICENSE MIT "Copyright (c) 2026 Laela Zorana", Makefile (`make demo`, `make eval`, `make ingest`, `make test`), deploy config (Render/Fly/HF Spaces). **No "Claude"/assistant attribution anywhere. No git init/commit/push. No deploy.**

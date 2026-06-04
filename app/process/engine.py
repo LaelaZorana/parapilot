@@ -93,7 +93,7 @@ class ProcessEngine:
         return out
 
     def verify_items(self) -> List[Dict[str, str]]:
-        """Every place flagged ``verify: true`` — the human-review checklist."""
+        """Every place flagged ``verify: true``, the human-review checklist."""
         items: List[Dict[str, str]] = []
         for step in self.flow.steps:
             if step.verify:

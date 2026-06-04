@@ -2,7 +2,7 @@
 
 Every substantive answer ParaPilot returns is an ``AnswerEnvelope`` carrying
 citations, a confidence score, the standing disclaimer, ``is_legal_information``,
-and an escalation block — the SPEC §6 UPL/safety contract.
+and an escalation block, the SPEC §6 UPL/safety contract.
 """
 from __future__ import annotations
 

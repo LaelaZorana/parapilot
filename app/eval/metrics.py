@@ -2,15 +2,15 @@
 
 All metrics are computable offline against the stub + corpus:
 
-  * groundedness / faithfulness — is every sentence in the answer backed by a
+  * groundedness / faithfulness: is every sentence in the answer backed by a
     cited source chunk? (RAGAS-style, computed by checking that each answer
     sentence has strong token overlap with at least one cited chunk's text)
-  * citation accuracy — did the answer cite the EXPECTED source, and are all
+  * citation accuracy: did the answer cite the EXPECTED source, and are all
     emitted citations real (resolve to retrieved chunks)?
-  * answer correctness — does the grounded answer contain the expected fact(s)?
-  * refusal correctness — did the system refuse exactly the questions it should,
+  * answer correctness: does the grounded answer contain the expected fact(s)?
+  * refusal correctness: did the system refuse exactly the questions it should,
     with the right refusal kind?
-  * hallucination — for the baseline comparison: an answer that asserts content
+  * hallucination: for the baseline comparison, an answer that asserts content
     NOT supported by the corpus (ungrounded) counts as a hallucination. A
     correct refusal is NOT a hallucination.
 """

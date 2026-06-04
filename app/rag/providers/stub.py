@@ -1,4 +1,4 @@
-"""Deterministic, offline STUB provider — grounded *extractive* answers.
+"""Deterministic, offline STUB provider: grounded *extractive* answers.
 
 This is the default provider. It does NOT generate free text; it can only
 *select and quote* sentences from the retrieved context, then attach the
@@ -108,7 +108,7 @@ class StubProvider(Provider):
 
         if not candidates:
             # Query terms matched the passage (that's why it was retrieved) but
-            # not any single sentence strongly — quote the top passage's lead so
+            # not any single sentence strongly, quote the top passage's lead so
             # we still ground rather than refuse.
             lead = _split_sentences(context[0].text)
             return (lead[0] + " [1]") if lead else "INSUFFICIENT_CONTEXT"

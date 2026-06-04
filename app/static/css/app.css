@@ -1,4 +1,4 @@
-/* ParaPilot design system — editorial-legal refinement on Tailwind utilities.
+/* ParaPilot design system: editorial-legal refinement on Tailwind utilities.
    Trustworthy editorial: deep navy ink + warm brass accent on cream paper,
    serif display headings, generous whitespace, light + dark. */
 
@@ -19,7 +19,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Editorial display headings — serif. */
+/* Editorial display headings: serif. */
 h1, h2, .pp-serif {
   font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino,
     Georgia, "Times New Roman", serif;
@@ -48,7 +48,7 @@ h1, h2, .pp-serif {
   color: transparent;
 }
 
-/* Card — warm paper. */
+/* Card: warm paper. */
 .pp-card {
   border-radius: 1rem;
   border: 1px solid rgb(223 213 196);          /* warm taupe */
