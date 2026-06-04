@@ -117,7 +117,7 @@ def home(request: Request):
             "active": "roadmap",
         }
     )
-    return templates.TemplateResponse("roadmap.html", ctx)
+    return templates.TemplateResponse(request, "roadmap.html", ctx)
 
 
 @app.get("/step/{step_id}", response_class=HTMLResponse)
@@ -135,7 +135,7 @@ def step_detail(request: Request, step_id: str):
             "branches": engine.branches(step_id),
         }
     )
-    return templates.TemplateResponse("partials/step_detail.html", ctx)
+    return templates.TemplateResponse(request, "partials/step_detail.html", ctx)
 
 
 @app.get("/ask", response_class=HTMLResponse)
@@ -153,7 +153,7 @@ def ask_page(request: Request):
             ],
         }
     )
-    return templates.TemplateResponse("ask.html", ctx)
+    return templates.TemplateResponse(request, "ask.html", ctx)
 
 
 @app.post("/ask", response_class=HTMLResponse)
@@ -162,7 +162,7 @@ def ask_submit(request: Request, question: str = Form(...)):
     env = answer_question(question)
     ctx = _base_ctx(request)
     ctx.update({"env": env})
-    return templates.TemplateResponse("partials/answer.html", ctx)
+    return templates.TemplateResponse(request, "partials/answer.html", ctx)
 
 
 # --- saved progress (SQLite) ------------------------------------------------
@@ -202,7 +202,7 @@ def toggle_step(
 
     ctx = _base_ctx(request)
     ctx.update({"step_id": step_id, "matter_id": matter_id, "done": is_done})
-    return templates.TemplateResponse("partials/progress_chip.html", ctx)
+    return templates.TemplateResponse(request, "partials/progress_chip.html", ctx)
 
 
 # --- about / verify-checklist / health --------------------------------------
@@ -211,7 +211,7 @@ def about(request: Request):
     engine = get_engine()
     ctx = _base_ctx(request)
     ctx.update({"active": "about", "verify_items": engine.verify_items()})
-    return templates.TemplateResponse("about.html", ctx)
+    return templates.TemplateResponse(request, "about.html", ctx)
 
 
 @app.get("/healthz", response_class=JSONResponse)
