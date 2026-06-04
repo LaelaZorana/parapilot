@@ -15,7 +15,7 @@ from app.schemas import AnswerEnvelope, AnswerKind, Escalation
 
 _ADVICE_TEXT = (
     "I can explain your options and the rule that applies, but I can't tell you "
-    "which choice to make or predict how a judge will rule — that's legal advice, "
+    "which choice to make or predict how a judge will rule, that's legal advice, "
     "and ParaPilot provides legal information only. For guidance on your specific "
     "situation, please reach out to a licensed Illinois attorney or legal aid."
 )

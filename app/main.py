@@ -38,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 app = FastAPI(
     title="ParaPilot",
-    description="Illinois divorce procedural navigator — legal information, not legal advice.",
+    description="Illinois divorce procedural navigator: legal information, not legal advice.",
     version=__version__,
 )
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
@@ -63,7 +63,7 @@ def _linkify_citations(answer: str, citations) -> str:
         c = by_marker.get(n)
         if not c:
             return ""
-        title = html.escape("{} — {}".format(c.publisher, c.title))
+        title = html.escape("{}, {}".format(c.publisher, c.title))
         return (
             '<a href="{url}" target="_blank" rel="noopener" class="pp-cite" '
             'title="{title}">{n}</a>'

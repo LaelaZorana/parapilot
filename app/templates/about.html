@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}About — ParaPilot{% endblock %}
+{% block title %}About: ParaPilot{% endblock %}
 
 {% block content %}
 <section class="mx-auto max-w-3xl">
@@ -14,7 +14,7 @@
       ("Citations on every claim", "Substantive answers are assembled only from retrieved official sources, and each claim links to the exact source. No source, no claim.", "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"),
       ("Confidence + refusal", "Each answer carries a confidence score. Below threshold, ParaPilot refuses rather than guess and routes you to legal aid.", "M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"),
       ("Out-of-scope refusal", "A scope classifier blocks non-Illinois, non-divorce, and advice-seeking questions before they ever reach generation.", "M4.93 4.93l14.14 14.14"),
-      ("Information, not advice", "Framed on the FTC v. DoNotPay guardrails: ParaPilot explains your options and the rule that applies — never which choice to make.", "M9 11l3 3L22 4")
+      ("Information, not advice", "Framed on the FTC v. DoNotPay guardrails: ParaPilot explains your options and the rule that applies, never which choice to make.", "M9 11l3 3L22 4")
     ] %}
     {% for title, body, path in cards %}
     <div class="pp-card p-5">

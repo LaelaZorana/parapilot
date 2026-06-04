@@ -9,7 +9,7 @@ from __future__ import annotations
 DISCLAIMER = (
     "ParaPilot provides legal information, not legal advice. It is not a lawyer "
     "and cannot tell you what to do in your specific case. Procedures vary by "
-    "county and change over time — always confirm with the cited source or a "
+    "county and change over time, always confirm with the cited source or a "
     "licensed Illinois attorney or legal aid."
 )
 
@@ -26,5 +26,5 @@ DISCLAIMER_LONG = (
 )
 
 # One-click "find legal help" link used in the footer + modal.
-FIND_HELP_NAME = "Illinois Legal Aid Online — Find Legal Help"
+FIND_HELP_NAME = "Illinois Legal Aid Online: Find Legal Help"
 FIND_HELP_URL = "https://www.illinoislegalaid.org/get-legal-help"
