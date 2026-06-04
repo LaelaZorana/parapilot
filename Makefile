@@ -2,7 +2,7 @@
 PY ?= python3
 PORT ?= 8000
 
-.PHONY: help install demo run test eval ingest fmt docker docker-up clean
+.PHONY: help install demo run test eval eval-live ingest fmt docker docker-up clean
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -21,9 +21,16 @@ run: ## Run the app without auto-reload
 test: ## Run the test suite (offline)
 	PARAPILOT_PROVIDER=stub $(PY) -m pytest -q
 
-eval: ## Run the anti-hallucination eval (grounded vs plain-LLM baseline)
+eval: ## Run the anti-hallucination eval on the offline stub (grounded vs plain-LLM baseline)
 	PARAPILOT_PROVIDER=stub $(PY) -m app.eval.run_eval \
 	  --json app/eval/results/latest.json --md app/eval/results/table.md
+
+eval-live: ## Run the SAME eval against a REAL model (needs ANTHROPIC_API_KEY or OPENAI_API_KEY)
+	@test -n "$$ANTHROPIC_API_KEY$$OPENAI_API_KEY" || \
+	  { echo "Set ANTHROPIC_API_KEY or OPENAI_API_KEY (and optionally PARAPILOT_PROVIDER=openai)"; exit 1; }
+	PARAPILOT_PROVIDER=$${PARAPILOT_PROVIDER:-anthropic} $(PY) -m app.eval.run_eval \
+	  --json app/eval/results/latest-live.json --md app/eval/results/table-live.md
+	@echo "Live results written to app/eval/results/table-live.md — paste them into the README."
 
 ingest: ## Refresh the corpus from live IL sources (writes to data/corpus/_fetched/)
 	$(PY) -m app.rag.ingest.run_ingest
