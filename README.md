@@ -1,8 +1,8 @@
 # ParaPilot
 
-**A grounded, cited "legal GPS" for the Illinois divorce process — legal information, not legal advice.**
+**A grounded, cited "legal GPS" for the Illinois divorce process. Legal information, not legal advice.**
 
-ParaPilot turns the maze of an Illinois divorce into a clear, conditional roadmap and a chat that *only* answers from official sources — every claim links to a citation, low-confidence questions are refused instead of guessed, and advice-seeking or out-of-scope questions are politely escalated to legal aid.
+Most legal chatbots will confidently invent a form number, a fee, or a deadline. ParaPilot can't. It turns an Illinois divorce into a clear, conditional roadmap and a chat that answers *only* from official sources. Every claim links to its citation, low-confidence questions are refused instead of guessed, and anything that asks for advice or falls out of scope is escalated to legal aid.
 
 > ⚖️ **Legal information, not legal advice.** ParaPilot is an educational tool. It is not a lawyer, it cannot tell you what to do in your case, and using it does not create an attorney-client relationship. See the full disclaimer at the bottom.
 
@@ -10,11 +10,11 @@ ParaPilot turns the maze of an Illinois divorce into a clear, conditional roadma
 
 ## The problem
 
-Getting divorced without a lawyer in Illinois is mostly a *procedural* problem, not a forms problem:
+If you're getting divorced in Illinois without a lawyer, the forms are the easy part. The procedure is what gets you: what to do, in what order, by when, and who to call.
 
-- **Existing tools solve the wrong half.** Guided form-fillers (ILAO, A2J Author) hand you a document but not the sequence — *what do I do, in what order, by when, and who do I call?* General case-trackers (Courtroom5) are reactive and not Illinois-family-law-specific.
-- **The real questions are conditional.** *I can't find my spouse — now what? I can't make the hearing in person. I can't afford the filing fee. We have kids.* Each branch has its own forms, deadlines, and rules.
-- **Generic AI is dangerous here.** A plain chatbot will confidently invent form numbers, fees, and deadlines, and will happily give "advice" — which for a legal product is both wrong and a liability. (See *FTC v. DoNotPay*, $193K, 2025.)
+- **Existing tools solve the wrong half.** Guided form-fillers (ILAO, A2J Author) hand you a document but not the sequence: *what do I do, in what order, by when, and who do I call?* General case-trackers (Courtroom5) are reactive, and not specific to Illinois family law.
+- **The real questions are conditional.** *I can't find my spouse, now what? I can't make the hearing in person. I can't afford the filing fee. We have kids.* Each branch has its own forms, deadlines, and rules.
+- **Generic AI is dangerous here.** A plain chatbot will confidently invent form numbers, fees, and deadlines, and it will happily hand out "advice," which for a legal product is both wrong and a liability. (See *FTC v. DoNotPay*, $193K, 2025.)
 
 Nobody offers a **proactive, Illinois-family-law-specific conditional roadmap** that is grounded and refuses to hallucinate. ParaPilot does.
 
@@ -24,8 +24,8 @@ Nobody offers a **proactive, Illinois-family-law-specific conditional roadmap** 
 
 Two cooperating layers, both of which **always cite their sources**:
 
-1. **A deterministic process model** — the Illinois divorce process encoded as a curated, version-controlled **state machine**. Because it's data, not generation, the roadmap can't hallucinate. It drives the visual stepper, "what's next," required forms (and *what each must contain*), deadlines, who-to-call, and the conditional branches (children, remote appearance, can't-locate-spouse, fee waiver).
-2. **Grounded RAG for the long tail** — free-form questions are answered by hybrid retrieval over a bundled, citation-tagged corpus, with **citation-restricted generation**, a **confidence score**, an **out-of-scope/advice classifier**, and a hard **refuse-and-escalate** path.
+1. **A deterministic process model.** The Illinois divorce process, encoded as a curated, version-controlled **state machine**. Because it's data and not generation, the roadmap can't hallucinate. It drives the visual stepper, "what's next," the required forms (and *what each must contain*), deadlines, who to call, and the conditional branches (children, remote appearance, can't-locate-spouse, fee waiver).
+2. **Grounded RAG for the long tail.** Free-form questions go through hybrid retrieval over a bundled, citation-tagged corpus, with **citation-restricted generation**, a **confidence score**, an **out-of-scope/advice classifier**, and a hard **refuse-and-escalate** path.
 
 ```mermaid
 flowchart TD
@@ -52,18 +52,18 @@ flowchart TD
 
 The app has two views:
 
-- **Roadmap** — a visual stepper of the process. Click a step → a panel with its summary, required forms + what each must contain, deadlines, who to call, citations, and next/branch options. Conditional branches are visible inline.
-- **Ask** — a grounded chat. Answers show **inline clickable citations**, a **confidence meter**, and the disclaimer. Out-of-scope/advice → a visible refusal + escalation card.
+- **Roadmap:** a visual stepper of the process. Click a step and a panel opens with its summary, required forms and what each must contain, deadlines, who to call, citations, and next/branch options. Conditional branches show inline.
+- **Ask:** a grounded chat. Answers show **inline clickable citations**, a **confidence meter**, and the disclaimer. Out-of-scope or advice questions get a visible refusal and an escalation card.
 
 ---
 
 ## Results / impact
 
-The headline artifact is an **anti-hallucination evaluation**: 53 curated Illinois-divorce Q&A (41 grounded, 12 out-of-scope/advice), each with a known answer and authoritative citation. We run the same questions through ParaPilot (grounded RAG + scope gate + citations) and through a **plain-LLM baseline with no retrieval, no scope gate, and no citations** — the way a generic chatbot behaves — and measure the delta.
+The headline artifact is an **anti-hallucination evaluation**: 53 curated Illinois-divorce Q&A (41 grounded, 12 out-of-scope/advice), each with a known answer and an authoritative citation. We run the same questions through ParaPilot (grounded RAG + scope gate + citations) and through a **plain-LLM baseline with no retrieval, no scope gate, and no citations**, the way a generic chatbot behaves, and we measure the delta.
 
-> **Measured on a real model.** The table below is the live result with **ParaPilot's answers generated by Anthropic `claude-haiku-4-5`** — reproduce it with `make eval-live` (needs `ANTHROPIC_API_KEY`). The offline stub baseline is `make eval`.
+> **Measured on a real model.** The table below is the live result, with **ParaPilot's answers generated by Anthropic `claude-haiku-4-5`**. Reproduce it with `make eval-live` (needs `ANTHROPIC_API_KEY`). The offline stub baseline is `make eval`.
 >
-> **One caveat, stated plainly:** the *ParaPilot* column is real model output; the *Plain LLM* column is a deterministic **simulation** of an ungrounded chatbot (answers everything, never cites, never refuses). Because the hallucination metric counts any *uncited* claim, an ungrounded model scores ~100% by construction — so the number that actually matters is **ParaPilot's own 3.8% hallucination rate and 85.3% groundedness on real generations**, not the headline delta.
+> **One caveat, stated plainly:** the *ParaPilot* column is real model output. The *Plain LLM* column is a deterministic **simulation** of an ungrounded chatbot that answers everything, never cites, and never refuses. Because the hallucination metric counts any *uncited* claim, an ungrounded model scores ~100% by construction. So the number that actually matters is **ParaPilot's own 3.8% hallucination rate and 85.3% groundedness on real generations**, not the headline delta.
 
 | Metric | Plain LLM (ungrounded sim.) | ParaPilot on Haiku 4.5 | |
 |---|---|---|---|
@@ -73,9 +73,9 @@ The headline artifact is an **anti-hallucination evaluation**: 53 curated Illino
 | Citation accuracy | 0.0% | **100.0%** | higher is better |
 | Refusal correctness (out-of-scope / advice) | 0.0% | **100.0%** | higher is better |
 
-**How to read this.** A *hallucination* is any substantive claim not supported by a retrieved source — including answering a question that should have been refused. On real Haiku-generated answers, ParaPilot's grounded RAG + scope gate hold the hallucination rate to **3.8%** at **85.3% groundedness** (RAGAS-style: each cited claim must match the source it cites), while refusing every out-of-scope/advice question (100%) and citing every grounded answer (100%). The ungrounded baseline never cites or refuses — the failure mode grounded RAG exists to prevent.
+**How to read this.** A *hallucination* is any substantive claim not supported by a retrieved source, including answering a question that should have been refused. On real Haiku-generated answers, ParaPilot's grounded RAG and scope gate hold the hallucination rate to **3.8%** at **85.3% groundedness** (RAGAS-style: each cited claim must match the source it cites), while refusing every out-of-scope/advice question (100%) and citing every grounded answer (100%). The ungrounded baseline never cites or refuses. That's the exact failure mode grounded RAG exists to prevent.
 
-The guardrails also hold on a **held-out adversarial set** (questions never used to tune anything): 11/11 — every out-of-scope/advice probe refused, every genuine in-scope question answered.
+The guardrails also hold on a **held-out adversarial set** (questions never used to tune anything): 11/11, every out-of-scope/advice probe refused, every genuine in-scope question answered.
 
 ---
 
@@ -99,7 +99,7 @@ make eval        # offline stub baseline, no keys (fast, deterministic)
 make ingest      # refresh the corpus from live IL sources (writes to data/corpus/_fetched/)
 ```
 
-**Optional — use a real LLM.** Copy `.env.example` to `.env`, set `PARAPILOT_PROVIDER=anthropic` (or `openai`) and the matching API key. If the key or SDK is missing, ParaPilot transparently falls back to the stub — so everything still works offline.
+**Optional: use a real LLM.** Copy `.env.example` to `.env`, set `PARAPILOT_PROVIDER=anthropic` (or `openai`) and the matching API key. If the key or SDK is missing, ParaPilot falls back to the stub, so everything still works offline.
 
 ---
 
@@ -110,9 +110,9 @@ ParaPilot is built to be trustworthy *by construction*, modeled on the *FTC v. D
 - **Citations on every claim.** Substantive answers are assembled only from retrieved official sources, and each claim carries a clickable `[n]` citation to its exact source chunk. The pipeline *drops any citation marker that doesn't resolve* and refuses if an answer can't be tied to a source.
 - **Confidence + refusal.** Each answer has a confidence score derived from retrieval. Below threshold (or no good chunk), ParaPilot says *"I don't have a grounded answer for that"* and points to legal aid rather than guessing.
 - **Out-of-scope refusal.** A transparent classifier blocks non-Illinois, non-divorce, and advice-seeking questions before they ever reach generation. When a question is *unsure*, it defers to retrieval confidence, with a hard negative-topic gate (bankruptcy, traffic, immigration, etc.).
-- **Information, not advice (UPL).** ParaPilot explains *your options and the rule that applies* — never *which choice to make* or *how a judge will rule*. Advice-seeking phrasing gets a dedicated refusal: *"I can explain your options and the rule that applies, but I can't tell you which to choose."*
+- **Information, not advice (UPL).** ParaPilot explains *your options and the rule that applies*, never *which choice to make* or *how a judge will rule*. Advice-seeking phrasing gets a dedicated refusal: *"I can explain your options and the rule that applies, but I can't tell you which to choose."*
 - **Escalation everywhere.** Every response object carries `disclaimer`, `citations[]`, `is_legal_information: true`, and an `escalation` block with one-click links to **ILAO Find Legal Help** and the **Illinois Lawyer Finder**. A first-run modal and a persistent footer reinforce this.
-- **No fabricated specifics.** Exact form IDs, fees, and statutory deadlines are pulled from the cited sources or marked `verify: true` with the source URL to check — never invented. The **About** page renders the full verification checklist. (See the verify list at the end of this README.)
+- **No fabricated specifics.** Exact form IDs, fees, and statutory deadlines are pulled from the cited sources or marked `verify: true` with the source URL to check, never invented. The **About** page renders the full verification checklist. (See the verify list at the end of this README.)
 
 **Grounding sources** (each corpus chunk is tagged with its URL + retrieved date):
 
@@ -126,10 +126,10 @@ ParaPilot is built to be trustworthy *by construction*, modeled on the *FTC v. D
 
 ## Tech stack
 
-- **Backend:** FastAPI (Python 3.9-compatible), server-rendered with **Jinja2 + htmx** — no SPA, fast first paint.
+- **Backend:** FastAPI (Python 3.9-compatible), server-rendered with **Jinja2 + htmx**, so there's no SPA and the first paint is fast.
 - **Process model:** YAML-defined state machine validated with Pydantic v2.
 - **Retrieval:** hybrid **BM25** (compact, dependency-free) + **TF-IDF cosine** (scikit-learn) as an offline embedding fallback, score-fused.
-- **Generation:** provider interface — deterministic **stub** (offline, extractive, can't hallucinate) + optional **Anthropic** / **OpenAI** behind the same contract.
+- **Generation:** one provider interface behind a deterministic **stub** (offline, extractive, can't hallucinate), with optional **Anthropic** / **OpenAI** behind the same contract.
 - **Storage:** SQLite (saved progress) via SQLAlchemy.
 - **UI:** Tailwind (vendored Play CDN, works offline), Inter, indigo/violet design system, light + dark, fully responsive.
 - **Eval:** custom RAGAS-style harness (groundedness, citation accuracy, answer correctness, refusal correctness) + plain-LLM baseline.
@@ -147,11 +147,11 @@ make docker            # build parapilot:latest
 docker compose up      # -> http://127.0.0.1:8000
 ```
 
-**Render** — New Web Service → Docker → health check path `/healthz`. No env vars required (offline stub). For a real LLM, add `PARAPILOT_PROVIDER` + the API key.
+**Render.** New Web Service → Docker → health check path `/healthz`. No env vars required (offline stub). For a real LLM, add `PARAPILOT_PROVIDER` and the API key.
 
-**Fly.io** — `fly launch` (detects the Dockerfile), then `fly deploy`. Mount a small volume at `/data` for the SQLite progress DB; internal port `8000`.
+**Fly.io.** `fly launch` (detects the Dockerfile), then `fly deploy`. Mount a small volume at `/data` for the SQLite progress DB; internal port `8000`.
 
-**Hugging Face Spaces (Docker SDK)** — point the Space at this repo; it builds the Dockerfile and serves on port `8000`.
+**Hugging Face Spaces (Docker SDK).** Point the Space at this repo; it builds the Dockerfile and serves on port `8000`.
 
 ---
 
@@ -189,13 +189,13 @@ We never fabricate form IDs, fees, or deadlines. The following Illinois specific
 
 | Item | What to verify | Source to check |
 |---|---|---|
-| **Filing fee amount** (`prepare_petition`) | Exact filing fee — set by each county circuit clerk; not a fixed statewide number. | [ILAO](https://www.illinoislegalaid.org/legal-information/getting-divorce) · [IL Courts forms](https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance) |
+| **Filing fee amount** (`prepare_petition`) | Exact filing fee, set by each county circuit clerk; not a fixed statewide number. | [ILAO](https://www.illinoislegalaid.org/legal-information/getting-divorce) · [IL Courts forms](https://www.illinoiscourts.gov/forms/approved-forms/forms-circuit-court/divorce-child-support-maintenance) |
 | **Service deadline** (`serve_respondent`) | Exact time by which service must be completed / proof filed before default. | [ILAO](https://www.illinoislegalaid.org/legal-information/getting-divorce) |
 | **Respondent's response deadline** (`respondent_response`) | The exact number of days to appear/respond (printed on the summons; county rules). | [ILAO](https://www.illinoislegalaid.org/legal-information/getting-divorce) |
 | **Parenting-education deadline** (`with_children`) | Confirm the "within 60 days of the first meeting" timing and approved-provider rules. | [ILAO](https://www.illinoislegalaid.org/legal-information/getting-divorce) |
 | **Remote-appearance request deadline** (`remote_appearance`) | Each circuit/judge sets its own deadline and request procedure under Rule 45. | [Rule 45 announcement](https://www.illinoiscourts.gov/News/390/Illinois-Supreme-Court-Amends-Rules-to-Support-use-of-Remote-Hearings-in-Court-Proceedings/news-detail/) |
 | **Service-by-publication procedure** (`service_by_publication`) | The exact affidavit form, notice period, newspaper, and publication fee (set locally). | [ILAO](https://www.illinoislegalaid.org/legal-information/getting-divorce) + circuit clerk |
-| **Fee-waiver eligibility thresholds** (`fee_waiver`) | Income thresholds / public-benefit criteria — stated inside the Application PDF, not the web page. | [IL Courts fee-waiver](https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/fee-waiver-civil) |
+| **Fee-waiver eligibility thresholds** (`fee_waiver`) | Income thresholds / public-benefit criteria, stated inside the Application PDF, not the web page. | [IL Courts fee-waiver](https://www.illinoiscourts.gov/forms/approved-forms/forms-approved-forms-circuit-court/fee-waiver-civil) |
 
 > Note on form **codes**: the catalog labels shown for forms (e.g. `DWC Petition`, `DNC Judgment`, `DIV Summons`) are the labels used by illinoiscourts.gov's forms catalog, not statutory citations. The **form titles** are verbatim from the IL Courts site; confirm the current PDF before filing.
 
@@ -203,8 +203,8 @@ We never fabricate form IDs, fees, or deadlines. The following Illinois specific
 
 ## ⚖️ Legal information, not legal advice
 
-ParaPilot is an educational tool that explains the Illinois divorce (dissolution of marriage) process and points you to authoritative sources. **It provides legal information, not legal advice, and using it does not create an attorney-client relationship.** ParaPilot is not a lawyer and cannot tell you which choice is right for your situation. Court rules, forms, fees, and deadlines differ by county and change over time — before you rely on anything here, verify it against the cited official source, and for advice about your own case, talk to a licensed Illinois attorney or legal aid: **[ILAO — Find Legal Help](https://www.illinoislegalaid.org/get-legal-help)** · **[Illinois Lawyer Finder (ISBA)](https://www.isba.org/public/illinoislawyerfinder)**. Content is pending legal-aid review.
+ParaPilot is an educational tool that explains the Illinois divorce (dissolution of marriage) process and points you to authoritative sources. **It provides legal information, not legal advice, and using it does not create an attorney-client relationship.** ParaPilot is not a lawyer and cannot tell you which choice is right for your situation. Court rules, forms, fees, and deadlines differ by county and change over time. Before you rely on anything here, verify it against the cited official source, and for advice about your own case, talk to a licensed Illinois attorney or legal aid: **[ILAO — Find Legal Help](https://www.illinoislegalaid.org/get-legal-help)** · **[Illinois Lawyer Finder (ISBA)](https://www.isba.org/public/illinoislawyerfinder)**. Content is pending legal-aid review.
 
 ## License
 
-MIT © 2026 Laela Zorana — see [LICENSE](LICENSE).
+MIT © 2026 Laela Zorana. See [LICENSE](LICENSE).
