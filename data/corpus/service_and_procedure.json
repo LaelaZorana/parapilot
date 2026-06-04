@@ -1,47 +1,47 @@
 {
   "source_id": "service_and_procedure",
-  "title": "Serving your spouse & procedural basics (ILAO + Illinois forms)",
+  "title": "Serving your spouse & procedural basics (Illinois)",
   "url": "https://www.illinoislegalaid.org/legal-information/getting-divorce",
   "publisher": "Illinois Legal Aid Online (ILAO) / Illinois Courts",
   "jurisdiction": "IL",
   "topic": "service",
   "retrieved": "2026-06-03",
-  "license_note": "Synthesized from ILAO and the Illinois statewide service forms. Exact deadlines and the publication notice period are county/clerk-specific and must be verified.",
+  "license_note": "Facts summarized in our own words; this is not ILAO's text. See the source URL for ILAO's full guidance. Exact deadlines and the publication notice period are county- and clerk-specific, so verify them before relying on them.",
   "chunks": [
     {
       "id": "service_overview",
       "heading": "Serving the respondent",
-      "text": "After you file your Petition for Dissolution and the court issues a summons, you must formally notify ('serve') your spouse that a divorce case has started. The most common methods are personal service by the county sheriff, or by a court-appointed special process server. You give the sheriff the summons and a copy of the filed petition using the 'Letter to the Sheriff' form.",
+      "text": "Once you file your Petition for Dissolution and the court issues a summons, the next job is to formally notify your spouse that the case exists. That formal step is called 'service.' The two usual routes are personal service by the county sheriff or by a special process server the court appoints. You hand the sheriff the summons and a copy of the filed petition using the 'Letter to the Sheriff' form.",
       "tags": ["service", "summons", "sheriff", "special process server", "respondent"]
     },
     {
       "id": "service_proof",
       "heading": "Proof of service",
-      "text": "Whoever serves the documents fills out a proof of service (return) showing when and how the respondent was served, and it is filed with the court. The court needs proof that the respondent was properly served before it can move forward, including before entering a default if the respondent does not respond.",
+      "text": "Whoever does the serving fills out a proof of service, also called a return, that records when and how your spouse was served, and that gets filed with the court. The court won't move the case forward until it has that proof on file, and it needs it before it can enter a default if your spouse never responds.",
       "tags": ["service", "proof of service", "return", "default"]
     },
     {
       "id": "service_publication",
       "heading": "Service by publication (when you cannot find your spouse)",
-      "text": "If you genuinely cannot locate your spouse after a diligent search, Illinois allows 'service by publication.' You file an affidavit describing the efforts you made to find your spouse, and notice of the case is published in a newspaper in the county. Publication has its own requirements and a notice period, and the specific newspaper, fee, and timing are set locally — confirm these with the circuit clerk.",
+      "text": "If you truly can't find your spouse after making a real effort to look, Illinois lets you serve them 'by publication.' You file an affidavit laying out the search you did, and notice of the case then runs in a county newspaper. Publication comes with its own rules and a waiting period, and the exact newspaper, the fee, and the timing are set locally, so confirm them with the circuit clerk before you rely on them.",
       "tags": ["service", "service by publication", "cannot locate", "affidavit", "diligent search", "newspaper"]
     },
     {
       "id": "respondent_response",
       "heading": "The respondent's response",
-      "text": "After being served, the respondent has a limited time to respond by filing an Appearance and, if they disagree with anything in the petition, a Response/Answer. The exact deadline to respond is stated on the summons. If the respondent does not respond in time, the petitioner may ask the court for a default.",
+      "text": "Once your spouse has been served, they have a limited window to respond by filing an Appearance, plus a Response or Answer if they disagree with anything in the petition. The exact deadline is printed on the summons. If that window closes with no response, you can ask the court for a default.",
       "tags": ["respondent", "response", "appearance", "answer", "deadline", "default"]
     },
     {
       "id": "filing_fee_note",
       "heading": "Filing fees vary by county",
-      "text": "There is a fee to file the Petition for Dissolution, and additional fees can apply for service. The exact dollar amounts are set by each county circuit clerk and differ across Illinois, so check your county clerk's fee schedule. If you cannot afford the fee, you can file an Application for Waiver of Court Fees.",
+      "text": "There's a fee to file the Petition for Dissolution, and service can carry its own fees on top. The actual dollar figures aren't statewide; each county's circuit clerk sets them, so they vary across Illinois and you'll want to check your own clerk's fee schedule. If the fee is more than you can manage, you can file an Application for Waiver of Court Fees.",
       "tags": ["filing fee", "cost", "county", "circuit clerk", "fee waiver"]
     },
     {
       "id": "ilcs_750",
       "heading": "Governing law: IMDMA (750 ILCS 5)",
-      "text": "Divorce in Illinois is governed by the Illinois Marriage and Dissolution of Marriage Act (IMDMA), 750 ILCS 5. It sets the rules for grounds (irreconcilable differences), division of marital property, maintenance, allocation of parental responsibilities, and child support. Court procedure is also governed by the Illinois Supreme Court Rules and the Code of Civil Procedure.",
+      "text": "The law behind Illinois divorce is the Illinois Marriage and Dissolution of Marriage Act, the IMDMA, found at 750 ILCS 5. It lays down the rules for grounds (irreconcilable differences), how marital property gets divided, maintenance, how parental responsibilities are allocated, and child support. How the case actually moves through court is also shaped by the Illinois Supreme Court Rules and the Code of Civil Procedure.",
       "tags": ["law", "IMDMA", "750 ILCS 5", "statute", "governing law"]
     }
   ]

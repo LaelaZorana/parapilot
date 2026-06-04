@@ -1,83 +1,83 @@
 {
   "source_id": "ilao_getting_divorce",
-  "title": "Getting a divorce (Illinois Legal Aid Online)",
+  "title": "Getting a divorce (Illinois)",
   "url": "https://www.illinoislegalaid.org/legal-information/getting-divorce",
   "publisher": "Illinois Legal Aid Online (ILAO)",
   "jurisdiction": "IL",
   "topic": "divorce",
   "retrieved": "2026-06-03",
-  "license_note": "Summarized/excerpted for grounding. ILAO content is reproduced here only as a seed snapshot; refresh with `make ingest`.",
+  "license_note": "Facts summarized in our own words from public Illinois divorce guidance; this is not ILAO's text. See the source URL for ILAO's full guide. Legal information, not legal advice, so verify against the official source before relying on it.",
   "chunks": [
     {
       "id": "ilao_residency",
       "heading": "Residency requirement",
-      "text": "To get a divorce in Illinois, at least one spouse must have lived in Illinois for at least 90 days. Illinois calls a divorce a 'dissolution of marriage.' The same residency rule applies to civil unions.",
+      "text": "Before you can divorce in Illinois, one of the two spouses needs to have lived in the state for at least 90 days. Illinois doesn't call it divorce on the paperwork; the legal term is 'dissolution of marriage.' The same 90-day rule covers civil unions.",
       "tags": ["residency", "eligibility", "90 days"]
     },
     {
       "id": "ilao_grounds",
       "heading": "Grounds: irreconcilable differences (no-fault)",
-      "text": "Illinois is a no-fault divorce state. A married couple can get divorced if they show the court there are 'irreconcilable differences' — meaning the marriage has broken down and cannot be repaired. Illinois does not require one spouse to be 'at fault' for the divorce.",
+      "text": "Illinois is a no-fault state, so you don't have to prove your spouse did anything wrong. The only ground the court needs is 'irreconcilable differences,' which means the marriage has broken down and can't be put back together. Nobody has to be blamed for it.",
       "tags": ["grounds", "grounds for divorce", "irreconcilable differences", "no-fault", "reason for divorce", "why divorce", "basis"]
     },
     {
       "id": "ilao_separation_presumption",
       "heading": "Six-month separation presumption",
-      "text": "If the spouses have lived separate and apart for at least 6 months before the judge enters the divorce, the court presumes that irreconcilable differences exist. 'Living apart' can include living in the same home but no longer together as a couple in some circumstances.",
+      "text": "If the two of you have lived separate and apart for at least 6 months by the time the judge finalizes the divorce, the court presumes irreconcilable differences exist. And 'living apart' doesn't always mean separate addresses; in some situations it can count even when you share a home but are no longer living as a couple.",
       "tags": ["separation", "6 months", "presumption", "irreconcilable differences"]
     },
     {
       "id": "ilao_process_overview",
       "heading": "Overview of the process",
-      "text": "Generally, getting a divorce involves: deciding whether you meet the residency requirement, preparing and filing a Petition for Dissolution of Marriage, paying the filing fee (or asking the court to waive it), formally notifying ('serving') your spouse, your spouse filing an Appearance and/or Response, resolving issues like property, support, and — if you have children — parental responsibilities, and finally a judge entering a Judgment for Dissolution of Marriage. ILAO publishes separate step-by-step 'How To' instructions for divorces with children and without children.",
+      "text": "Most divorces move through the same arc. You check that you meet the 90-day residency rule, then you prepare and file a Petition for Dissolution of Marriage and pay the filing fee, or ask the court to waive it. Next you formally notify ('serve') your spouse, and your spouse files an Appearance, a Response, or both. From there you work out the substance: property, support, and, if you have kids, parental responsibilities. The case ends when a judge enters a Judgment for Dissolution of Marriage. ILAO publishes separate step-by-step instructions for cases with children and cases without, linked from the guide below.",
       "tags": ["process", "overview", "steps", "start a divorce case", "file for divorce", "first step in a divorce", "petition for dissolution"]
     },
     {
       "id": "ilao_property",
       "heading": "Dividing property and debts",
-      "text": "When the spouses cannot agree, the judge divides the spouses' marital property and debts. This can include money, belongings, real estate, debt, and investments. Illinois divides marital property 'equitably' (fairly), which does not always mean equally. Property either spouse owned before the marriage is generally non-marital and stays with that spouse, with some exceptions.",
+      "text": "When the two of you can't agree on who gets what, the judge splits the marital property and debts for you. That covers money, belongings, real estate, debt, and investments. Illinois divides it 'equitably,' which means fairly rather than strictly fifty-fifty, so an equitable split isn't always an equal one. Anything either spouse owned before the marriage is usually treated as non-marital and stays with that spouse, though there are exceptions.",
       "tags": ["property", "equitable distribution", "debt", "marital property"]
     },
     {
       "id": "ilao_maintenance",
       "heading": "Spousal maintenance (alimony)",
-      "text": "The judge can order one spouse to pay the other spouse maintenance (sometimes called alimony or spousal support). Illinois has guidelines and formulas that courts use to calculate the amount and the duration of maintenance, based on factors including the spouses' incomes and the length of the marriage.",
+      "text": "The judge can also order one spouse to pay the other maintenance, which you may know as alimony or spousal support. Illinois doesn't leave the amount to guesswork; it has guidelines and set formulas that work out both how much is paid and for how long, driven mainly by the two incomes and how long the marriage lasted.",
       "tags": ["maintenance", "alimony", "spousal support"]
     },
     {
       "id": "ilao_children_responsibilities",
       "heading": "Children: parental responsibilities and parenting time",
-      "text": "If the spouses have children together, the judge decides 'parental responsibilities' (formerly called custody). This covers two things: parenting time (the schedule of when each parent is with the child) and decision-making responsibility (who makes major decisions about education, health, religion, and activities). The parents are encouraged to agree on a Parenting Plan; if they cannot, the court decides based on the best interests of the child.",
+      "text": "When there are children, the judge decides what Illinois now calls 'parental responsibilities,' the term that replaced 'custody.' It breaks into two parts. Parenting time is the schedule of when each parent has the child, and decision-making responsibility is about who makes the big calls on education, health, religion, and activities. The court wants parents to agree on a Parenting Plan themselves, and when they can't, the judge decides on what's in the best interests of the child.",
       "tags": ["children", "parental responsibilities", "custody", "parenting time", "decision-making", "parenting plan", "what does parental responsibilities mean", "responsibilities meaning", "definition"]
     },
     {
       "id": "ilao_parenting_education",
       "heading": "Parenting education requirement",
-      "text": "In divorces involving children, parents must attend a court-approved parenting education program before the judge decides parental responsibilities. This is generally required within 60 days after the first meeting (status date) with the judge. The Center for Divorce Education and other providers offer approved courses.",
+      "text": "If children are involved, both parents have to complete a court-approved parenting education program before the judge will rule on parental responsibilities. The usual window is within 60 days of your first court date (the status date). The Center for Divorce Education runs an approved course, and it isn't the only provider.",
       "tags": ["children", "parenting education", "60 days", "requirement"]
     },
     {
       "id": "ilao_child_support",
       "heading": "Child support",
-      "text": "When there are children, the judge also sets child support. Illinois uses an 'income shares' model that considers both parents' net incomes and the amount of parenting time, using state guidelines.",
+      "text": "Where there are children, the judge sets child support too. Illinois runs an 'income shares' model, so the number comes out of both parents' net incomes and the amount of parenting time, following the state's guidelines.",
       "tags": ["children", "child support", "income shares"]
     },
     {
       "id": "ilao_fee_waiver",
       "heading": "If you cannot afford the fees",
-      "text": "If you cannot afford the court filing fee or service fee, you can ask the court to waive your fees by filing a fee-waiver application. The judge reviews your finances and can waive all or part of your court fees. ILAO offers a free guided 'Easy Form' interview to help you fill out the fee-waiver forms.",
+      "text": "If the court filing fee or the service fee is out of reach, you can ask the court to waive it by filing a fee-waiver application. The judge looks at your finances and can waive the fees in full or in part. ILAO has a free guided 'Easy Form' interview that walks you through the fee-waiver paperwork.",
       "tags": ["fee waiver", "indigent", "filing fee", "cost"]
     },
     {
       "id": "ilao_timeline",
       "heading": "How long it takes",
-      "text": "An uncontested divorce (where the spouses agree on everything) can often be finished in about 6 months or more. A contested divorce (where the spouses disagree on major issues) commonly takes 18 months or more. The exact timing depends on the county, the court's schedule, and the complexity of the case.",
+      "text": "Timing depends a lot on whether you agree. An uncontested divorce, where the two of you have settled everything, often wraps up in about 6 months, sometimes longer. A contested one, where you're still fighting over the major issues, commonly runs 18 months or more. The county, the court's calendar, and how complicated the case is all push that number around.",
       "tags": ["timeline", "uncontested", "contested", "how long"]
     },
     {
       "id": "ilao_uncontested",
       "heading": "Uncontested / agreed divorce",
-      "text": "If both spouses agree on all issues — property, debts, support, and any parenting arrangements — the divorce is 'uncontested.' The spouses can put their agreement in a written Marital Settlement Agreement (and, if there are children, an agreed Parenting Plan) and present it to the judge to enter as part of the Judgment for Dissolution of Marriage.",
+      "text": "When both spouses agree on everything, the property, the debts, support, and any parenting arrangements, the divorce is 'uncontested.' You can write the agreement up as a Marital Settlement Agreement, add an agreed Parenting Plan if you have children, and hand it to the judge to fold into the Judgment for Dissolution of Marriage.",
       "tags": ["uncontested", "agreed", "marital settlement agreement", "judgment"]
     }
   ]
