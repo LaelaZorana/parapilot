@@ -1,4 +1,4 @@
-"""Out-of-scope classifier (SPEC §4, §6).
+"""Out-of-scope classifier.
 
 Deterministic, dependency-free, and explainable. ParaPilot only answers
 questions that are:

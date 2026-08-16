@@ -1,6 +1,6 @@
 """Refusal templates: build a safe ``AnswerEnvelope`` for any non-answer.
 
-Three refusal shapes (SPEC §4, §6):
+Three refusal shapes:
   * advice-seeking  -> "I can explain your options and the rule, but I can't
                         tell you which to choose."
   * out-of-scope    -> non-IL / non-divorce.

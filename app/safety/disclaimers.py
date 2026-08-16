@@ -1,7 +1,7 @@
 """Standing disclaimers and the legal-information framing.
 
-Modeled on the FTC v. DoNotPay guardrails (SPEC §0): everything is legal
-INFORMATION, never legal advice, and we never claim to be or replace a lawyer.
+Modeled on the FTC v. DoNotPay guardrails: everything is legal INFORMATION,
+never legal advice, and we never claim to be or replace a lawyer.
 """
 from __future__ import annotations
 

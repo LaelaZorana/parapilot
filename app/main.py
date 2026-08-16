@@ -1,6 +1,6 @@
 """ParaPilot FastAPI app: server-rendered (Jinja + htmx).
 
-Two main views (SPEC §7):
+Two main views:
   * ROADMAP  : visual stepper of the IL divorce process; click a step for its
                summary, required forms (+ what each must contain), deadlines,
                who-to-call, citations, and next/branch options.

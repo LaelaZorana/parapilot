@@ -1,9 +1,9 @@
 """Baseline: a plain LLM with NO retrieval, NO scope gate, NO citations.
 
-SPEC §5 requires comparing ParaPilot against an ungrounded plain-LLM baseline and
-reporting the hallucination-rate delta. To keep `make eval` fully offline and
-deterministic, the default baseline is a faithful *simulation* of how an
-ungrounded chat model behaves on these questions: it answers everything
+The eval compares ParaPilot against an ungrounded plain-LLM baseline and reports
+the hallucination-rate delta. To keep `make eval` fully offline and deterministic,
+the default baseline is a faithful *simulation* of how an ungrounded chat model
+behaves on these questions: it answers everything
 confidently with no citation and no refusal, which is exactly the failure mode
 grounded RAG is built to prevent.
 

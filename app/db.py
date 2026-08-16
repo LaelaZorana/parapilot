@@ -1,4 +1,4 @@
-"""SQLite storage for saved progress / matters (SPEC §7).
+"""SQLite storage for saved progress / matters.
 
 Lean SQLAlchemy setup. The DB stores a lightweight "matter" (a saved progress
 record) and per-step completion. It never stores legal advice, only the user's

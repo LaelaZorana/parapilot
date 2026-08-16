@@ -1,4 +1,4 @@
-"""Eval metrics (SPEC §5).
+"""Eval metrics.
 
 All metrics are computable offline against the stub + corpus:
 

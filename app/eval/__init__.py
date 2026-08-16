@@ -1,1 +1,1 @@
-"""Anti-hallucination evaluation harness (SPEC §5)."""
+"""Anti-hallucination evaluation harness."""

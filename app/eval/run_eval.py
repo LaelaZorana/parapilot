@@ -1,4 +1,4 @@
-"""Run the anti-hallucination eval offline (SPEC §5).
+"""Run the anti-hallucination eval offline.
 
     python -m app.eval.run_eval                # run + print table
     python -m app.eval.run_eval --json out.json

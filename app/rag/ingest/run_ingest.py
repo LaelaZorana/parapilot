@@ -1,4 +1,4 @@
-"""Refresh the corpus from live IL sources (SPEC §3).
+"""Refresh the corpus from live IL sources.
 
     python -m app.rag.ingest.run_ingest            # refresh all sources
     python -m app.rag.ingest.run_ingest --dry-run  # show what would be fetched

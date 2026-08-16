@@ -155,14 +155,6 @@ docker compose up      # -> http://127.0.0.1:8000
 
 ---
 
-## Screenshots
-
-> _Add screenshots/GIFs here: the Roadmap stepper with a step panel open, an Ask answer with inline citations + confidence, and a refusal/escalation card. (Light + dark.)_
->
-> `docs/roadmap.png` · `docs/ask-grounded.png` · `docs/ask-refusal.png`
-
----
-
 ## Project layout
 
 ```

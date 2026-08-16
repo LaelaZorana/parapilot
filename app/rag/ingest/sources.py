@@ -1,4 +1,4 @@
-"""Registry of authoritative IL sources to (re)ingest (SPEC §3)."""
+"""Registry of authoritative IL sources to (re)ingest."""
 from __future__ import annotations
 
 from typing import List, NamedTuple

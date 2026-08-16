@@ -1,7 +1,7 @@
 """Hybrid retrieval: BM25 (lexical) + TF-IDF cosine (semantic-ish), fused.
 
-SPEC §4 asks for hybrid retrieval (BM25 + embeddings) with a lean,
-offline-friendly fallback. We use:
+Retrieval is hybrid (BM25 plus embeddings) with a lean, offline-friendly
+fallback. We use:
 
   * **BM25**: a compact, dependency-free implementation (exact keyword/term
     matching with length normalization). Great for form names, statute cites.

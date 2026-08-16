@@ -36,4 +36,3 @@ data/corpus/*.raw.html
 !data/corpus/*.json
 .venv-audit/
 .venv*/
-.claude/

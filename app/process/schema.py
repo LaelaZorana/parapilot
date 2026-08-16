@@ -1,4 +1,4 @@
-"""Schema for the process state machine (SPEC §2).
+"""Schema for the process state machine.
 
 A flow is a namespaced set of Step nodes. Each Step is curated, cited data (not
 generated), which is what makes the roadmap hallucination-proof. Steps may be
